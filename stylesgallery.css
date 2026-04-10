@@ -1,0 +1,543 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --cream: #FFEAD6;
+  --brown: #562915;
+  --pink: #FCA6AF;
+}
+
+
+
+
+body {
+  font-family: 'Barlow', sans-serif;
+  background: var(--cream);
+  color: var(--brown);
+  backdrop-filter: blur(6px);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* HEADER */
+.header {
+  padding: 10px 8%;
+}
+
+.topbar {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+
+/*LOGO*/
+.logo-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-img img {
+  height: 60px; /* adjust this if needed */
+  object-fit: contain;
+}
+
+
+
+/* ICONS */
+.icons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 30px;
+}
+
+.icons svg {
+  width: 20px;
+  height: 80px;
+  stroke: var(--brown);
+  fill: none;
+}
+
+/* NAV */
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 30px;
+}
+
+.nav a {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--brown);
+}
+
+
+
+/* ================= HERO SECTION ================= */
+.hero {
+  margin-top: 20px;
+}
+
+/* ================= RASPBERRY STRIP ================= */
+.tagline-strip {
+  width: 100%;
+  background: #D13955;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* MAIN HEADING */
+.hero-main {
+  font-family: 'Playfair Display', serif;
+  font-size: 64px;
+  color: #FFEAD6
+;
+}
+
+/* "mood" styling */
+.hero-main span {
+  font-style: italic;
+  color: #FFBF52;
+  position: relative;
+}
+
+/* underline accent */
+.hero-main span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 100%;
+  height: 4px;
+  background: #F0A224;
+}
+
+/* subtext */
+.hero-sub {
+  margin-top: 20px;
+  font-size: 20px;
+  color: #FFEAD6;
+}
+/* ================= HERO ================= */
+.hero {
+  margin-top: 20px;
+}
+
+.tagline-strip {
+  padding: 60px 20px 40px;
+}
+
+/* ================= LOOKBOOK ================= */
+.lookbook-section {
+  background: #562915;
+  padding: 60px 0;
+}
+
+/* HEADER */
+.lookbook-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.lookbook-header h2 {
+  font-family: 'Recoleta', serif;
+  font-size: 40px;
+  color: #FFEAD6;
+  margin-bottom: 10px;
+}
+
+.lookbook-header p {
+  color: rgba(255,234,214,0.85);
+  font-size: 14px;
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ================= FILM WRAPPER ================= */
+.film-wrapper {
+  position: relative;
+  width: 85%;
+  margin: 40px auto 60px;
+}
+
+/* ================= SLIDER ================= */
+.film-slider {
+  display: flex;
+  gap: 25px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 20px 10px;
+}
+
+.film-slider::-webkit-scrollbar {
+  display: none;
+}
+
+/* ================= FILM CARD ================= */
+.film-card {
+  min-width: 320px;
+  height: 220px;
+  background: #2b1405;
+  padding: 10px;
+  border-radius: 10px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.film-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+  filter: sepia(0.3) contrast(1.1) brightness(0.95);
+}
+
+/* FILM HOLES */
+.film-card::before,
+.film-card::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: repeating-linear-gradient(
+    to right,
+    transparent 0px,
+    transparent 12px,
+    #fff 12px,
+    #fff 18px
+  );
+}
+
+.film-card::before { top: 4px; }
+.film-card::after { bottom: 4px; }
+
+/* ================= BUTTONS ================= */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.slider-btn.left { left: -10px; }
+.slider-btn.right { right: -10px; }
+
+/* ================= INSTAGRAM ================= */
+
+.insta-section {
+  padding: 80px 0;
+  background: linear-gradient(to bottom, #562915 0%, #4a2212 100%);
+}
+
+/* HEADER */
+.insta-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.insta-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  color: #FFEAD6;
+  margin-bottom: 10px;
+}
+
+.gram {
+  font-style: italic;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 1.5px;
+  margin-left: 6px;
+}
+
+.insta-header p {
+  color: rgba(255,234,214,0.85);
+  font-size: 14px;
+  margin-top: 10px;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* GRID */
+.insta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  width: 100%;
+  padding: 0 5%;
+}
+
+.insta-grid a {
+  display: block;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.insta-grid a:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+}
+
+.insta-grid img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* overlay icon */
+.insta-grid a::after {
+  content: "↗";
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 18px;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.insta-grid a:hover::after {
+  opacity: 1;
+}
+
+
+/* BANNER */
+.banner {
+  position: relative;
+  background: #562915;
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.bg-text {
+  position: absolute;
+  font-size: 120px;
+  opacity: 0.08;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.banner-content h2 {
+  margin-bottom: 20px;
+}
+
+
+.banner-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.primary-link {
+  display: inline-block;
+  background: #FFBF52;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.primary-link:hover {
+  transform: scale(1.05);
+}
+
+.secondary {
+  background: rgba(255,255,255,0.2);
+  border: none;
+  padding: 12px 24px;
+  color: white;
+}
+
+/* FOOTER */
+
+/* ================= FOOTER BASE ================= */
+.site-footer {
+  background: #FFEAD6;
+  border-top: 1px solid rgba(59,26,14,0.12);
+  padding: 2.2rem 6% 1.2rem;
+}
+
+/* ================= LAYOUT ================= */
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3rem;
+
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid rgba(59,26,14,0.1);
+}
+
+/* ================= LEFT SIDE ================= */
+.footer-newsletter h3 {
+  font-family: 'Recoleta', serif;
+  font-size: 1.25rem;
+  color: #3B1A0E;
+  margin-bottom: 0.3rem;
+}
+
+.footer-newsletter p {
+  font-size: 0.85rem;
+  color: rgba(59,26,14,0.75);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  max-width: 260px;
+}
+
+/* ================= EMAIL PILL ================= */
+.email-form {
+  display: flex;
+  align-items: center;
+
+  border: 2px solid #3B1A0E;
+  border-radius: 999px;
+
+  max-width: 300px;
+  height: 44px;
+
+  padding: 0 14px;
+}
+
+/* REMOVE ALL DEFAULT INPUT STYLING */
+.email-form input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+
+  font-size: 0.9rem;
+  color: #3B1A0E;
+
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+/* placeholder */
+.email-form input::placeholder {
+  color: rgba(59,26,14,0.4);
+}
+
+/* arrow button */
+.email-form button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  font-size: 1.4rem;
+  color: #3B1A0E;
+}
+
+/* ================= SUCCESS MESSAGE ================= */
+.email-msg {
+  display: none;
+  font-size: 0.78rem;
+  color: #EE6F34;
+  margin-top: 6px;
+}
+
+/* ================= SOCIAL ICONS ================= */
+.footer-social {
+  display: flex;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.footer-social a {
+  width: 40px;
+  height: 40px;
+
+  background: #3B1A0E;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.footer-social a:hover {
+  background: #EE6F34;
+  transform: translateY(-2px);
+}
+
+.footer-social svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ================= RIGHT SIDE ================= */
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+/* LOGO */
+.footer-logo img {
+  height: 42px;
+  margin-bottom: 6px;
+}
+
+/* LINKS GRID */
+.footer-links-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.4rem 1.6rem;
+}
+
+/* REMOVE BLUE LINK STYLE */
+.footer-links-grid a {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  color: #3B1A0E;
+  text-decoration: none;
+}
+
+.footer-links-grid a:visited {
+  color: #3B1A0E;
+}
+
+.footer-links-grid a:hover {
+  color: #EE6F34;
+}
+
+/* ================= COPYRIGHT ================= */
+.footer-copy {
+  text-align: center;
+  font-size: 0.75rem;
+  color: rgba(59,26,14,0.5);
+  margin-top: 10px;
+}
