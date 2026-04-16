@@ -48,12 +48,18 @@
         <p class="brand-label">Kodak Charmera</p>
         <h2>Keychain Digital Camera Blind Box Collection</h2>
       </div>
-      <p class="size-label">Size: Single Box</p>
-      <span class="price-main">$52.00</span>
+      <p class="size-label" id="bundleSizeLabel">Size: Single Box</p>
+      <span class="price-main" id="bundlePrice">$51.90</span>
       <div class="bundle-options">
-        <a href="https://shopee.sg/Kodak-Charmera-Keychain-Digital-Camera-i.232559135.42068305164" target="_blank" class="bundle-opt active">Single Box</a>
-        <a href="https://shopee.sg/Kodak-Charmera-Keychain-Digital-Camera-i.232559135.42068305164" target="_blank" class="bundle-opt">Single Box with 16GB MicroSD card bundle</a>
-        <a href="https://shopee.sg/Kodak-Charmera-Keychain-Digital-Camera-i.232559135.42068305164" target="_blank" class="bundle-opt">Single Box with 32GB MicroSD card bundle</a>
+        <a href="https://shopee.sg/Kodak-Charmera-Keychain-Digital-Camera-i.232559135.42068305164" target="_blank" class="bundle-opt"
+           data-price="$51.90" data-img="imagechar/rotate1.png" data-label="Single Box"
+           onmouseenter="previewBundle(this)" onmouseleave="resetBundle()">Single Box</a>
+        <a href="https://shopee.sg/Kodak-Charmera-Keychain-Digital-Camera-i.232559135.42068305164" target="_blank" class="bundle-opt"
+           data-price="$64.30" data-img="imagechar/16gb.png" data-label="Single Box + 16GB MicroSD"
+           onmouseenter="previewBundle(this)" onmouseleave="resetBundle()">Single Box with 16GB MicroSD card bundle</a>
+        <a href="https://shopee.sg/Kodak-Charmera-Keychain-Digital-Camera-i.232559135.42068305164" target="_blank" class="bundle-opt"
+           data-price="$69.90" data-img="imagechar/32gb.png" data-label="Single Box + 32GB MicroSD"
+           onmouseenter="previewBundle(this)" onmouseleave="resetBundle()">Single Box with 32GB MicroSD card bundle</a>
       </div>
       <p class="disclaimer">*Disclaimer: We cannot guarantee the colour of Charmera you specifically obtain as the variation is random. The product you receive is completely random.</p>
       <div class="cta-row">
@@ -234,6 +240,7 @@
 const slides = document.querySelectorAll('#heroSlider .slide');
 const dotsContainer = document.getElementById('imgDots');
 let current = 0;
+let autoTimer = null;
 
 // Build dots
 slides.forEach((_, i) => {
@@ -252,8 +259,46 @@ function goTo(n) {
 }
 function moveSlide(dir) { goTo(current + dir); }
 
-// Auto-advance every 4 s
-setInterval(() => moveSlide(1), 4000);
+// Auto-advance every 4s
+function startAuto() { autoTimer = setInterval(() => moveSlide(1), 4000); }
+function stopAuto()  { clearInterval(autoTimer); }
+startAuto();
+
+/* ── Bundle hover: price + image preview ── */
+const priceEl = document.getElementById('bundlePrice');
+const labelEl = document.getElementById('bundleSizeLabel');
+
+// Store a dedicated preview image element on the first slide
+const previewImg = slides[0].querySelector('img');
+const defaultSrc   = 'imagechar/rotate1.png';
+const defaultPrice = '$51.90';
+const defaultLabel = 'Size: Single Box';
+
+function previewBundle(el) {
+  stopAuto();
+  // Hide all slides, show slide 0 with swapped image
+  slides.forEach(s => s.classList.remove('active'));
+  dotsContainer.querySelectorAll('.img-dot').forEach(d => d.classList.remove('active'));
+  previewImg.src = el.dataset.img;
+  slides[0].classList.add('active');
+  dotsContainer.children[0].classList.add('active');
+  // Update price & label
+  priceEl.textContent = el.dataset.price;
+  labelEl.textContent = 'Size: ' + el.dataset.label;
+}
+
+function resetBundle() {
+  // Restore original slide 0 image and go back to current slide
+  previewImg.src = defaultSrc;
+  slides[0].classList.remove('active');
+  dotsContainer.children[0].classList.remove('active');
+  slides[current].classList.add('active');
+  dotsContainer.children[current].classList.add('active');
+  // Restore price & label
+  priceEl.textContent = defaultPrice;
+  labelEl.textContent = defaultLabel;
+  startAuto();
+}
 
 /* ── Email submit ── */
 function handleEmailSubmit() {
