@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Charmera — Product Specifications</title>
+
+<link rel="icon" type="image/ico" href="imagechar/favicon.ico">
+
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;0,900;1,700;1,900&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="charmera-specs.css">
+</head>
+<body>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<header class="site-header">
+  <div class="header-top">
+    <div></div>
+    <a href="index.html" class="logo-link">
+      <img src="imagechar/charmera-logo.png" alt="Charmera"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="logo-fallback">Charmera</span>
+    </a>
+    <div class="header-icons">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.65" y2="16.65"/></svg>
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-6 8-6s8 2 8 6"/></svg>
+      <svg viewBox="0 0 24 24"><circle cx="9" cy="20.5" r="1"/><circle cx="17" cy="20.5" r="1"/><path d="M3 4h2l2.5 11h9l2-7H7"/></svg>
+    </div>
+  </div>
+  <nav class="header-nav">
+    <a href="#">Shop</a>
+    <a href="charmera-specs.html" class="active">Charmera</a>
+    <a href="charmera-accessories.html">Accessories</a>
+    <a href="#">About Us</a>
+    <a href="#">Help</a>
+  </nav>
+</header>
+
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="hero">
+  <p class="eyebrow">Kodak × Charmera · Limited Edition</p>
+  <div class="hero-grid">
+    <div class="hero-left">
+      <h1>Shoot.<br><span class="italic-word">Carry.</span><br>Collect.</h1>
+      <p class="hero-subtitle">The world's most charming keychain camera. Inspired by the iconic Kodak film era — now miniaturised and reimagined for a new generation of memory-makers.</p>
+      <div class="product-name-block">
+        <p class="brand-label">Kodak Charmera</p>
+        <h2>Keychain Digital Camera Blind Box Collection</h2>
+      </div>
+      <p class="size-label">Size: Single Box</p>
+      <span class="price-main">$52.00</span>
+      <div class="bundle-options">
+        <a href="https://shopee.sg/Kodak-Charmera-Keychain-Digital-Camera-i.232559135.42068305164" target="_blank" class="bundle-opt active">Single Box</a>
+        <a href="https://shopee.sg/Kodak-Charmera-Keychain-Digital-Camera-i.232559135.42068305164" target="_blank" class="bundle-opt">Single Box with 16GB MicroSD card bundle</a>
+        <a href="https://shopee.sg/Kodak-Charmera-Keychain-Digital-Camera-i.232559135.42068305164" target="_blank" class="bundle-opt">Single Box with 32GB MicroSD card bundle</a>
+      </div>
+      <p class="disclaimer">*Disclaimer: We cannot guarantee the colour of Charmera you specifically obtain as the variation is random. The product you receive is completely random.</p>
+      <div class="cta-row">
+        <a href="https://shopee.sg/Kodak-Charmera-Keychain-Digital-Camera-i.232559135.42068305164" target="_blank" class="btn-primary">🛍️ Buy Now on Shopee</a>
+        <a href="charmera-accessories.html" class="btn-secondary">📦 Shop Accessories</a>
+      </div>
+    </div>
+
+    <!-- ── IMAGE ROTATOR (16 slides) ── -->
+    <div class="hero-img-wrap" id="heroSlider">
+      <button class="img-arrow prev" onclick="moveSlide(-1)">&#8249;</button>
+      <button class="img-arrow next" onclick="moveSlide(1)">&#8250;</button>
+
+      <!--
+        SLIDES: each <div class="slide"> holds one <img>.
+        Replace each src with image/rotate1.png … image/rotate16.png
+        (already matched to your file names shown in the folder screenshot)
+      -->
+      <div class="slide active"><img src="imagechar/rotate1.png"  alt="Charmera view 1"></div>
+      <div class="slide"><img src="imagechar/rotate2.png"  alt="Charmera view 2"></div>
+      <div class="slide"><img src="imagechar/rotate3.png"  alt="Charmera view 3"></div>
+      <div class="slide"><img src="imagechar/rotate4.png"  alt="Charmera view 4"></div>
+      <div class="slide"><img src="imagechar/rotate5.png"  alt="Charmera view 5"></div>
+      <div class="slide"><img src="imagechar/rotate6.png"  alt="Charmera view 6"></div>
+      <div class="slide"><img src="imagechar/rotate7.png"  alt="Charmera view 7"></div>
+      <div class="slide"><img src="imagechar/rotate8.png"  alt="Charmera view 8"></div>
+      <div class="slide"><img src="imagechar/rotate9.png"  alt="Charmera view 9"></div>
+      <div class="slide"><img src="imagechar/rotate10.png" alt="Charmera view 10"></div>
+      <div class="slide"><img src="imagechar/rotate11.png" alt="Charmera view 11"></div>
+      <div class="slide"><img src="imagechar/rotate12.png" alt="Charmera view 12"></div>
+      <div class="slide"><img src="imagechar/rotate13.png" alt="Charmera view 13"></div>
+      <div class="slide"><img src="imagechar/rotate14.png" alt="Charmera view 14"></div>
+      <div class="slide"><img src="imagechar/rotate15.png" alt="Charmera view 15"></div>
+      <div class="slide"><img src="imagechar/rotate16.png" alt="Charmera view 16"></div>
+
+      <div class="img-dots" id="imgDots"></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ ABOUT ═══════════ -->
+<section class="about-section">
+  <p class="eyebrow" style="margin-bottom:0.3rem;">About Charmera</p>
+  <h2>What is CHARMERA?</h2>
+  <p>The KODAK CHARMERA is a tiny digital camera supporting both photo taking and video recording. Customised KODAK frames, vintage filters and date stamp are available in the photo mode. A total of 7 retro styles are sold in blind boxes, adding fun and collectibility for you and your friends!</p>
+  <p>With media transfer via the included USB-C cable, it's easy to move your memories from camera to device and share them in a snap. A package includes a camera, a keyring and a USB-C cable. Micro SD card is NOT included.</p>
+</section>
+
+
+<!-- ═══════════ FEATURE ROWS ═══════════ -->
+<section class="feature-section">
+  <div class="feature-row">
+    <div class="feat-img">
+     
+      <div class="feat-img-placeholder"><img src="imagechar/product1.png" alt="Secret Edition"></div>
+      <div class="feat-label-overlay">Blind Box</div>
+    </div>
+    <div class="feat-content">
+      <p>There are 7 uniquely vintage designs of CHARMERA including 1 secret edition. Each blind box contains a random style of CHARMERA. You will not know which one you get until you open it.</p>
+      <a href="https://shopee.sg/Kodak-Charmera-Keychain-Digital-Camera-i.232559135.42068305164" target="_blank" class="btn-primary" style="align-self:flex-start;">Buy Now on Shopee</a>
+    </div>
+  </div>
+
+  <div class="feature-row reverse">
+    <div class="feat-img">
+     
+      <div class="feat-img-placeholder"><img src="imagechar/product2.png" alt="Secret Edition"></div>
+      <div class="feat-label-overlay">Single Box</div>
+    </div>
+    <div class="feat-content">
+      <p><strong>Single box:</strong> There is one random edition of CHARMERA per blind box. Each basic style is with the odds of 1/8.</p>
+      <a href="https://shopee.sg/Kodak-Charmera-Keychain-Digital-Camera-i.232559135.42068305164" target="_blank" class="btn-primary" style="align-self:flex-start;">Buy Now on Shopee</a>
+    </div>
+  </div>
+
+  <div class="feature-row">
+    <div class="feat-img">
+      
+      <div class="feat-img-placeholder"><img src="imagechar/product3.webp" alt="Secret Edition"></div>
+      <div class="feat-label-overlay">Secret Edition</div>
+    </div>
+    <div class="feat-content">
+      <p>The secret edition features a transparent shell that shows off the camera's inner workings — a nod to retro-tech minimalism that's sleek, see-through, and seriously cool.</p>
+      <p>The probability of drawing the secret edition is 1/48.</p>
+      <a href="https://shopee.sg/Kodak-Charmera-Keychain-Digital-Camera-i.232559135.42068305164" target="_blank" class="btn-primary" style="align-self:flex-start;">Buy Now on Shopee</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ SPECS TABLE ═══════════ -->
+<section class="specs-wrap">
+  <div class="section-header">
+    <p class="eyebrow">What's inside</p>
+    <h2>Product Specifications</h2>
+  </div>
+  <table class="specs-table">
+    <tbody>
+      <tr><td>Model</td><td>Kodak Charmera Keychain Digital Camera</td></tr>
+      <tr><td>Image Output</td><td>1440 × 1080, 1.6M Megapixels</td></tr>
+      <tr><td>Image Format</td><td>JPEG</td></tr>
+      <tr><td>Filters</td><td>7-colour filters (Standard, Vivid, B&amp;W, Warm, Cool, Retro, Sunshine)</td></tr>
+      <tr><td>Image Sensor</td><td>1 / 4 inch CMOS</td></tr>
+      <tr><td>Lens</td><td>35mm F2.4</td></tr>
+      <tr><td>Storage</td><td>Micro SD (1GB–128GB)</td></tr>
+      <tr><td>Frame Rate</td><td>30 fps</td></tr>
+      <tr><td>Video Format</td><td>Avi</td></tr>
+      <tr><td>Battery</td><td>Rechargeable 300mAh</td></tr>
+      <tr><td>Dimensions</td><td>58(W) × 24.5(H) × 20(D) mm</td></tr>
+      <tr><td>Weight</td><td>30(g)</td></tr>
+      <tr><td>Material</td><td>ABS</td></tr>
+    </tbody>
+  </table>
+</section>
+
+
+<!-- ═══════════ FOOTER CTA ═══════════ -->
+<div class="footer-cta">
+  <h2>Ready to capture your moments?</h2>
+  <p>Free shipping on Shopee · Blind box — mystery style included</p>
+  <a href="https://shopee.sg/Kodak-Charmera-Keychain-Digital-Camera-i.232559135.42068305164" target="_blank" class="btn-primary">🛍️ Buy Now on Shopee</a>
+</div>
+
+
+<!-- ═══════════ SITE FOOTER ═══════════ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-newsletter">
+      <h3>Subscribe to Our Newsletter!</h3>
+      <p>Sign up to our newsletter to stay up to date on all things Charmera</p>
+      <div class="email-form">
+        <input type="email" id="footerEmail" placeholder="E-mail" aria-label="Email address">
+        <button type="button" onclick="handleEmailSubmit()" aria-label="Subscribe">&#8250;</button>
+      </div>
+      <p id="emailMsg" style="font-size:0.78rem;color:var(--orange);margin-top:0.5rem;display:none;">Thanks for subscribing!</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/share/1DPst67qBR/?mibextid=wwXIfr" aria-label="Facebook" target="_blank">
+          <svg viewBox="0 0 24 24" fill="#fff6ed"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/kodak_shootfilm?igsh=NDl6ajF5a3V1NXlp" aria-label="Instagram" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff6ed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="0.8" fill="#fff6ed" stroke="none"/>
+          </svg>
+        </a>
+        <a href="https://youtube.com/shorts/nMnHP-9sdxE?feature=shared" aria-label="YouTube" target="_blank">
+          <svg viewBox="0 0 24 24">
+            <path fill="#fff6ed" d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/>
+            <polygon fill="#3B1A0E" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-right">
+      <a href="index.html" class="footer-logo">
+        <img src="imagechar/charmera-logo.png" alt="Charmera"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span class="footer-logo-fallback">Charmera</span>
+      </a>
+      <div class="footer-links-grid">
+        <a href="#">About Us</a>
+        <a href="charmera-specs.html">Products</a>
+        <a href="#">FAQ</a>
+        <a href="#">Gallery</a>
+        <a href="#">Customer Support</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+  <p class="footer-copy">Copyright &copy; Charmera 2026 Production</p>
+</footer>
+
+
+<script>
+/* ── Image rotator ── */
+const slides = document.querySelectorAll('#heroSlider .slide');
+const dotsContainer = document.getElementById('imgDots');
+let current = 0;
+
+// Build dots
+slides.forEach((_, i) => {
+  const d = document.createElement('button');
+  d.className = 'img-dot' + (i === 0 ? ' active' : '');
+  d.onclick = () => goTo(i);
+  dotsContainer.appendChild(d);
+});
+
+function goTo(n) {
+  slides[current].classList.remove('active');
+  dotsContainer.children[current].classList.remove('active');
+  current = (n + slides.length) % slides.length;
+  slides[current].classList.add('active');
+  dotsContainer.children[current].classList.add('active');
+}
+function moveSlide(dir) { goTo(current + dir); }
+
+// Auto-advance every 4 s
+setInterval(() => moveSlide(1), 4000);
+
+/* ── Email submit ── */
+function handleEmailSubmit() {
+  const input = document.getElementById('footerEmail');
+  const msg = document.getElementById('emailMsg');
+  if (input.value && input.value.includes('@')) {
+    msg.style.display = 'block';
+    input.value = '';
+    setTimeout(() => { msg.style.display = 'none'; }, 3000);
+  } else {
+    input.focus();
+  }
+}
+</script>
+</body>
+</html>

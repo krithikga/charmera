@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Charmera — Accessories</title>
+
+<link rel="icon" type="image/ico" href="imagechar/favicon.ico">
+
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;0,900;1,700;1,900&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="charmera-accessories.css">
+</head>
+<body>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<header class="site-header">
+  <div class="header-top">
+    <div></div>
+    <a href="index.html" class="logo-link">
+      <img src="imagechar/charmera-logo.png" alt="Charmera"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="logo-fallback">Charmera</span>
+    </a>
+    <div class="header-icons">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.65" y2="16.65"/></svg>
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-6 8-6s8 2 8 6"/></svg>
+      <svg viewBox="0 0 24 24"><circle cx="9" cy="20.5" r="1"/><circle cx="17" cy="20.5" r="1"/><path d="M3 4h2l2.5 11h9l2-7H7"/></svg>
+    </div>
+  </div>
+  <nav class="header-nav">
+    <a href="#">Shop</a>
+    <a href="charmera-specs.html">Charmera</a>
+    <a href="charmera-accessories.html" class="active">Accessories</a>
+    <a href="#">About Us</a>
+    <a href="#">Help</a>
+  </nav>
+</header>
+
+
+<!-- ═══════════ PAGE HERO ═══════════ -->
+<section class="page-hero">
+  <p class="eyebrow" style="color:var(--yellow);">Complete your setup</p>
+  <h1>Charm it <span class="italic-word">your way.</span></h1>
+  <p>Screen protectors, SD cards, keychains, and curated bundles — everything you need to protect, store, and personalise your Charmera.</p>
+</section>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <button class="filter-btn active" onclick="filterCards('all',this)">All</button>
+  <button class="filter-btn" onclick="filterCards('protection',this)">Protection</button>
+  <button class="filter-btn" onclick="filterCards('storage',this)">Storage</button>
+  <button class="filter-btn" onclick="filterCards('style',this)">Style</button>
+  <button class="filter-btn" onclick="filterCards('carry',this)">Carry</button>
+</div>
+
+
+<!-- ═══════════ ACCESSORIES GRID ═══════════ -->
+<section class="acc-section">
+  <div class="acc-grid" id="accGrid">
+
+    <!-- ─── 1. MINI POUCH ─── -->
+    <div class="acc-card" data-cat="carry">
+      <div class="discount-badge">-10%</div>
+      <div class="pick-badge">Charmera's Pick</div>
+      <div class="acc-img">
+        
+        <img id="img-mini-pouch" src="imagechar/black mini pouch.webp" alt="Mini Pouch">
+      </div>
+      <div class="acc-body">
+        <p class="acc-tag">Carry</p>
+        <p class="acc-name">Mini Pouch</p>
+        <p class="acc-desc">Soft mini pouch designed to fit the Kodak Charmera perfectly. Keeps it scratch-free on the go.</p>
+        <div class="variation-btns">
+          <!--
+            data-img: path to the image for this variation
+            First button is .active by default
+          -->
+          <button class="var-btn active"
+                  data-target="img-mini-pouch"
+                  data-img="imagechar/black mini pouch.webp"
+                  onclick="selectVar(this)">Black</button>
+          <button class="var-btn"
+                  data-target="img-mini-pouch"
+                  data-img="imagechar/red mini pouch.webp"
+                  onclick="selectVar(this)">Red</button>
+        </div>
+        <div class="acc-footer">
+          <div><p class="price-original">$5.50</p><p class="price-sale">$4.95</p></div>
+          <a href="https://shopee.sg/Mini-Pouch-(Suitable-for-Kodak-Charmera-Camera)-i.232559135.40928217257" target="_blank" class="acc-btn">Shop →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── 2. CHARMERA SKINS / COVERS ─── -->
+    <div class="acc-card" data-cat="style">
+      <div class="discount-badge">-5%</div>
+      <div class="pick-badge">Charmera's Pick</div>
+      <div class="acc-img">
+        
+        <img id="img-skin" src="imagechar/charmera skin.webp" alt="Charmera Skin">
+      </div>
+      <div class="acc-body">
+        <p class="acc-tag">Style</p>
+        <p class="acc-name">Charmera Skins / Covers</p>
+        <p class="acc-desc">Custom-cut vinyl skins and covers. Give your Charmera a whole new look without adding any bulk.</p>
+        <div class="variation-btns">
+          <button class="var-btn active"
+                  data-target="img-skin"
+                  data-img="imagechar/charmera skin.webp"
+                  onclick="selectVar(this)">Fling</button>
+          <button class="var-btn"
+                  data-target="img-skin"
+                  data-img="imagechar/japan edition.webp"
+                  onclick="selectVar(this)">Japan Edition</button>
+        </div>
+        <div class="acc-footer">
+          <div><p class="price-original">$13.80</p><p class="price-sale">$13.11</p></div>
+          <a href="https://shopee.sg/Kodak-Charmera-%27Skins%27-Covers-i.232559135.46801156451" target="_blank" class="acc-btn">Shop →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── 3. KODAK 2-IN-1 CARD READER C210 ─── -->
+    <div class="acc-card" data-cat="storage">
+      <div class="discount-badge">-10%</div>
+      <div class="acc-img">
+        
+        <img src="imagechar/card reader.webp" alt="Kodak 2-in-1 Card Reader C210">
+      </div>
+      <div class="acc-body">
+        <p class="acc-tag">Storage</p>
+        <p class="acc-name">Kodak 2-in-1 Card Reader C210</p>
+        <p class="acc-desc">Transfer photos and videos instantly. Compatible with MicroSD cards — works with USB-A and USB-C ports.</p>
+        <div class="acc-footer">
+          <div><p class="price-original">$13.20</p><p class="price-sale">$11.88</p></div>
+          <a href="https://shopee.sg/Kodak-2-in-1-Card-Reader-C210-i.232559135.48456325024" target="_blank" class="acc-btn">Shop →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── 4. SCREEN PROTECTOR ─── -->
+    <div class="acc-card" data-cat="protection">
+      <div class="discount-badge">-10%</div>
+      <div class="acc-img">
+        <!--
+          IMAGE SLOT — Screen Protector
+          No variation. Replace src: image/screen protector.webp
+        -->
+        <img src="imagechar/screen protector.webp" alt="Screen Protector">
+      </div>
+      <div class="acc-body">
+        <p class="acc-tag">Protection</p>
+        <p class="acc-name">Screen Protector</p>
+        <p class="acc-desc">Tempered glass precision-cut for the Charmera display. Crystal-clear, scratch and fingerprint resistant.</p>
+        <div class="acc-footer">
+          <div><p class="price-original">$8.10</p><p class="price-sale">$7.29</p></div>
+          <a href="https://shopee.sg/Screen-Protector-(Suitable-for-Kodak-Charmera-Camera)-i.232559135.55057461727" target="_blank" class="acc-btn">Shop →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── 5. MINI TRANSPARENT POUCH ─── -->
+    <div class="acc-card" data-cat="carry">
+      <div class="discount-badge">-3%</div>
+      <div class="acc-img">
+        
+        <img src="imagechar/mini transparent pouch.webp" alt="Mini Transparent Pouch">
+      </div>
+      <div class="acc-body">
+        <p class="acc-tag">Carry</p>
+        <p class="acc-name">Mini Transparent Pouch</p>
+        <p class="acc-desc">See-through soft pouch that lets your Charmera's colourful design shine through. Light and easy to clip on.</p>
+        <div class="acc-footer">
+          <div><p class="price-original">$9.20</p><p class="price-sale">$8.74</p></div>
+          <a href="https://shopee.sg/Mini-Transparent-Pouch-(Suitable-for-Kodak-Charmera-Camera)-i.232559135.55607015957" target="_blank" class="acc-btn">Shop →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── 6. MINI TRANSPARENT HARD CASE ─── -->
+    <div class="acc-card" data-cat="protection">
+      <div class="discount-badge">-5%</div>
+      <div class="acc-img">
+        
+        <img src="imagechar/hard case.webp" alt="Mini Transparent Hard Case">
+      </div>
+      <div class="acc-body">
+        <p class="acc-tag">Protection</p>
+        <p class="acc-name">Mini Transparent Hard Case</p>
+        <p class="acc-desc">Slim hard-shell transparent case. Shows off your Charmera's colour while guarding against bumps and scratches.</p>
+        <div class="acc-footer">
+          <div><p class="price-original">$11.50</p><p class="price-sale">$10.35</p></div>
+          <a href="https://shopee.sg/Mini-Transparent-Hard-Case-(For-Kodak-Charmera-Camera)-i.232559135.55057461849" target="_blank" class="acc-btn">Shop →</a>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /acc-grid -->
+</section>
+
+
+<!-- ═══════════ SD CARD GUIDE ═══════════ -->
+<section class="sd-section">
+  <div class="sd-inner">
+    <div class="sd-text">
+      <p class="eyebrow" style="color:var(--orange);">Storage guide</p>
+      <h2>Which MicroSD card do I need?</h2>
+      <p>The Charmera uses a MicroSD card (not included). Pair it with the Kodak 2-in-1 Card Reader C210 for easy transfers to any device.</p>
+      <table class="sd-table">
+        <thead><tr><th>Card Size</th><th>~Photos (1.6MP)</th><th>~Videos (1080p)</th></tr></thead>
+        <tbody>
+          <tr><td>16GB</td><td>~4,000 shots</td><td>~40 mins</td></tr>
+          <tr><td><strong>32GB</strong><span class="rec-chip">Recommended</span></td><td>~8,000 shots</td><td>~80 mins</td></tr>
+          <tr><td>64GB</td><td>~16,000 shots</td><td>~160 mins</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="sd-visual">
+      <div class="sd-card-vis">
+        <h3>💾 32GB</h3>
+        <p>MicroSD · Class 10</p>
+        <p style="font-size:0.72rem;margin-top:0.2rem;opacity:0.4">~8,000 photos</p>
+        <span class="sd-rec">Our Pick</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ FOOTER CTA ═══════════ -->
+<div class="footer-cta">
+  <h2>Everything your Charmera needs.</h2>
+  <p>All accessories available on Shopee.SG · Fast local shipping</p>
+  <div class="cta-btns">
+    <a href="https://shopee.sg/Kodak-Charmera-Keychain-Digital-Camera-i.232559135.42068305164" target="_blank" class="cta-btn primary">🛍️ Buy Now on Shopee</a>
+    <a href="charmera-specs.html" class="cta-btn secondary">📸 View Charmera Specs</a>
+  </div>
+</div>
+
+
+<!-- ═══════════ SITE FOOTER ═══════════ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-newsletter">
+      <h3>Subscribe to Our Newsletter!</h3>
+      <p>Sign up to our newsletter to stay up to date on all things Charmera</p>
+      <div class="email-form">
+        <input type="email" id="footerEmail" placeholder="E-mail" aria-label="Email address">
+        <button type="button" onclick="handleEmailSubmit()" aria-label="Subscribe">&#8250;</button>
+      </div>
+      <p id="emailMsg" style="font-size:0.78rem;color:var(--orange);margin-top:0.5rem;display:none;">Thanks for subscribing!</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/share/1DPst67qBR/?mibextid=wwXIfr" aria-label="Facebook" target="_blank">
+          <svg viewBox="0 0 24 24" fill="#fff6ed"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/kodak_shootfilm?igsh=NDl6ajF5a3V1NXlp" aria-label="Instagram" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff6ed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="0.8" fill="#fff6ed" stroke="none"/>
+          </svg>
+        </a>
+        <a href="https://youtube.com/shorts/nMnHP-9sdxE?feature=shared" aria-label="YouTube" target="_blank">
+          <svg viewBox="0 0 24 24">
+            <path fill="#fff6ed" d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/>
+            <polygon fill="#3B1A0E" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-right">
+      <a href="index.html" class="footer-logo">
+        <img src="imagechar/charmera-logo.png" alt="Charmera"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span class="footer-logo-fallback">Charmera</span>
+      </a>
+      <div class="footer-links-grid">
+        <a href="#">About Us</a>
+        <a href="charmera-specs.html">Products</a>
+        <a href="#">FAQ</a>
+        <a href="#">Gallery</a>
+        <a href="#">Customer Support</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+  <p class="footer-copy">Copyright &copy; Charmera 2026 Production</p>
+</footer>
+
+
+<script>
+/* ── Filter cards ── */
+function filterCards(cat, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  const grid = document.getElementById('accGrid');
+  const cards = grid.querySelectorAll('.acc-card');
+  let visible = 0;
+
+  cards.forEach(card => {
+    const show = (cat === 'all' || card.dataset.cat === cat);
+    card.style.display = show ? 'flex' : 'none';
+    if (show) visible++;
+  });
+
+  // Centre single card by switching grid to 1-column
+  grid.classList.toggle('single-visible', visible === 1);
+}
+
+/* ── Variation image swap ── */
+function selectVar(btn) {
+  // Deactivate siblings
+  btn.closest('.variation-btns').querySelectorAll('.var-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  // Swap image
+  const targetId = btn.getAttribute('data-target');
+  const newSrc   = btn.getAttribute('data-img');
+  if (targetId && newSrc) {
+    const img = document.getElementById(targetId);
+    if (img) img.src = newSrc;
+  }
+}
+
+/* ── Email submit ── */
+function handleEmailSubmit() {
+  const input = document.getElementById('footerEmail');
+  const msg   = document.getElementById('emailMsg');
+  if (input.value && input.value.includes('@')) {
+    msg.style.display = 'block';
+    input.value = '';
+    setTimeout(() => { msg.style.display = 'none'; }, 3000);
+  } else {
+    input.focus();
+  }
+}
+</script>
+</body>
+</html>
