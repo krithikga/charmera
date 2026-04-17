@@ -1,279 +1,417 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
 <head>
-<meta charset="UTF-8">
-<title>Charmera Filters</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;600&family=Playfair+Display:wght@600;800&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="stylesfilter.css">
+ <meta charset="UTF-8">
+ <title>Charmera Filters</title>
+ <link
+   href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap"
+   rel="stylesheet">
+ <link rel="stylesheet" href="stylesfilter.css">
 </head>
+
 
 <body>
 
-<!-- HEADER -->
-<header class="header">
 
-  <div class="topbar">
+ <!-- HEADER -->
+ <header class="header" id="siteHeader">
+   <div class="topbar">
+     <div></div>
+     <a href="#" class="logo-img">
+       <img src="./imagechar/charmera-logo.png" alt="Charmera Logo">
+     </a>
+     <div class="icons">
+       <svg viewBox="0 0 24 24">
+         <circle cx="11" cy="11" r="7" />
+         <line x1="20" y1="20" x2="16" y2="16" />
+       </svg>
+       <svg viewBox="0 0 24 24">
+         <circle cx="12" cy="8" r="4" />
+         <path d="M4 20c0-4 4-6 8-6s8 2 8 6" />
+       </svg>
+       <svg viewBox="0 0 24 24">
+         <circle cx="9" cy="20" r="1" />
+         <circle cx="17" cy="20" r="1" />
+         <path d="M3 4h2l2 12h10l2-8H6" />
+       </svg>
+     </div>
+   </div>
+   <nav class="nav">
+     <a href="#" data-page="shop">SHOP</a>
+     <a href="#" data-page="charmera">CHARMERA</a>
+     <a href="#" data-page="about">ABOUT US</a>
+     <a href="#" data-page="help">HELP</a>
+   </nav>
+ </header>
+
+
+ <!-- HERO -->
+ <section class="hero">
+   <h1>Choose your <span class="mood">mood.</span></h1>
+   <p id="filterTypewriter"></p>
+ </section>
+
+
+ <!-- QUOTE STRIP -->
+ <div class="quote-strip">
+   <p>"The best camera is the one you carry everywhere." &nbsp;—&nbsp; <em>Made for every moment.</em></p>
+ </div>
+
+
+ <!-- STATS STRIP -->
+ <div class="stats-strip">
+   <div class="stat-item">
+     <div class="stat-value-group">
+       <span class="stat-num" data-target="7">0</span>
+     </div>
+     <span class="stat-label">Unique Filters</span>
+   </div>
+   <div class="stat-divider"></div>
+   <div class="stat-item">
+     <div class="stat-value-group">
+       <span class="stat-num" data-target="4">0</span>
+     </div>
+     <span class="stat-label">Vintage Frames</span>
+   </div>
+   <div class="stat-divider"></div>
+   <div class="stat-item">
+     <div class="stat-value-group">
+       <span class="stat-num" data-target="1000">0</span><span class="stat-suffix">+</span>
+     </div>
+     <span class="stat-label">Happy Customers</span>
+   </div>
+ </div>
 
-    <!-- LEFT (empty spacer) -->
-    <div></div>
 
-    <!-- CENTER LOGO -->
-    <a href="#" class="logo-img">
-      <img src="./imagechar/charmera-logo.png" alt="Charmera Logo">
-    </a>
+ <!-- ===== FRAMES SECTION ===== -->
+ <section class="frames-section">
 
-    <!-- RIGHT ICONS -->
-    <div class="icons">
-      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16" y2="16"/></svg>
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/></svg>
-      <svg viewBox="0 0 24 24"><circle cx="9" cy="20" r="1"/><circle cx="17" cy="20" r="1"/><path d="M3 4h2l2 12h10l2-8H6"/></svg>
-    </div>
-
-  </div>
-
-  <!-- NAVIGATION -->
-  <nav class="nav">
-    <a href="#">SHOP</a>
-    <a href="#">CHARMERA</a>
-    <a href="#">ABOUT US</a>
-    <a href="#">HELP</a>
-  </nav>
 
-</header>
+   <h2 class="section-title">Frames</h2>
+   <p class="section-subtitle">Capture the aura with vintage Kodak-inspired frames.</p>
 
-<!-- HERO -->
-<section class="hero">
-  <h1>
-    Choose your <span class="mood">mood.</span>
-  </h1>
-  <p>Every memory feels different. Capture it your way.</p>
-</section>
-
-
-<section class="frames-section">
 
-  <h2 class="section-title">Frames</h2>
-  <p class="section-subtitle">
-    Capture the aura with vintage Kodak-inspired frames.
-  </p>
+   <div class="frames">
 
-  <div class="frames">
 
-    <div class="frame-card">
-      <img src="https://www.kodak.retopro.co/cdn/shop/files/PICT0017.jpg?v=1756285842&width=600">
-      <h3>Painter frame</h3>
-    </div>
+     <div class="frame-card">
+       <span class="badge">● ARTISTIC</span>
+       <img src="https://www.kodak.retopro.co/cdn/shop/files/PICT0017.jpg?v=1756285842&width=600" alt="Painter frame">
+       <h3>Painter frame</h3>
+     </div>
 
-    <div class="frame-card">
-      <img src="https://www.kodak.retopro.co/cdn/shop/files/PICT0023.jpg?v=1756285895&width=600">
-      <h3>Negative film frame</h3>
-    </div>
 
-    <div class="frame-card">
-      <img src="https://www.kodak.retopro.co/cdn/shop/files/PICT0152.jpg?v=1755769893&width=600">
-      <h3>Kodak frame</h3>
-    </div>
+     <div class="frame-card">
+       <span class="badge">● CLASSIC</span>
+       <img src="https://www.kodak.retopro.co/cdn/shop/files/PICT0023.jpg?v=1756285895&width=600"
+         alt="Negative film frame">
+       <h3>Negative film frame</h3>
+     </div>
 
-    <div class="frame-card">
-      <img src="https://www.kodak.retopro.co/cdn/shop/files/PICT0100.jpg?v=1756285986&width=600">
-      <h3>1987 frame</h3>
-    </div>
-
-  </div>
-
-</section>
-
-<!-- FILTERS -->
-<section class="filters-section">
-
-  <h2 class="section-title">Filters</h2>
-
-  <p class="section-subtitle">
-    Transform every shot with signature Charmera tones.
-  </p>
-
-  <div class="filters">
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" class="bw">
-      <h3>B&W filter</h3>
-    </div>
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" class="cool">
-      <h3>Cool tone filter</h3>
-    </div>
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" class="warm">
-      <h3>Warm tone filter</h3>
-    </div>
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" class="yellow">
-      <h3>Pixel filter (Yellow)</h3>
-    </div>
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" class="red">
-      <h3>Pixel filter (Red)</h3>
-    </div>
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" class="blue">
-      <h3>Pixel filter (Blue)</h3>
-    </div>
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" class="gray">
-      <h3>Pixel filter (Gray)</h3>
-    </div>
-
-  </div>
-
-</section>
-
-<!-- CTA BANNER -->
-<section class="banner">
-  <h1 class="bg-text">CHARMERA</h1>
-
-  <div class="banner-content">
-    <h2>Capture your memories with Charmera.</h2>
-    <div class="banner-buttons">
-  
-        <a href="https://shopee.sg/Kodak-Charmera-Keychain-Digital-Camera-i.232559135.42068305164" target="_blank" class="primary-link">
-  🛒 BUY NOW ON SHOPEE
-</a>
-      <button class="secondary">VIEW FEATURES</button>
-    </div>
-  </div>
-</section>
-
-
-
-
-<!-- ================= FOOTER ================= -->
-<footer class="site-footer">
-  <div class="footer-inner">
-
-    <div class="footer-newsletter">
-      <h3>Subscribe to Our Newsletter!</h3>
-      <p>Sign up to our newsletter to stay up to date on all things Charmera</p>
-
-      <div class="email-form">
-        <input type="email" id="footerEmail" placeholder="E-mail">
-        <button type="button" onclick="handleEmailSubmit()">&#8250;</button>
-      </div>
-
-      <p id="emailMsg" class="email-msg">Thanks for subscribing!</p>
-
-      <div class="footer-social">
-  <a href="#">
-    <svg viewBox="0 0 24 24" fill="#FFEAD6">
-      <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
-    </svg>
-  </a>
-
-  <a href="#">
-    <svg viewBox="0 0 24 24" fill="none" stroke="#FFEAD6" stroke-width="2">
-      <rect x="2" y="2" width="20" height="20" rx="5"/>
-      <circle cx="12" cy="12" r="4"/>
-      <circle cx="17.5" cy="6.5" r="1" fill="#FFEAD6" stroke="none"/>
-    </svg>
-  </a>
-
-  <a href="#">
-  <svg viewBox="0 0 24 24">
-    <path fill="#FFEAD6" d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.7-.8-2.1-.9C15.9 5 12 5 12 5h0s-3.9 0-6.9.1c-.4.1-1.3.1-2.1.9-.6.6-.8 2-.8 2S2 9.7 2 11.3v1.4C2 14.3 2.2 16 2.2 16s.2 1.4.8 2c.8.8 1.9.8 2.4.9 1.7.2 6.6.2 6.6.2s3.9 0 6.9-.1c.4-.1 1.3-.1 2.1-.9.6-.6.8-2 .8-2s.2-1.7.2-3.3v-1.4C22 9.7 21.8 8 21.8 8z"/>
-    <polygon fill="#3B1A0E" points="10 15 16 12 10 9"/>
-  </svg>
-</a>
-</div>
-    </div>
-
-    <div class="footer-right">
-      <a href="index.html" class="footer-logo">
-        <img src="imagechar/charmera-logo.png" alt="Charmera">
-      </a>
-
-      <div class="footer-links-grid">
-        <a href="#">About Us</a>
-        <a href="#">Products</a>
-        <a href="#">FAQ</a>
-        <a href="#">Gallery</a>
-        <a href="#">Customer Support</a>
-        <a href="#">Privacy Policy</a>
-      </div>
-    </div>
-
-  </div>
-
-  <p class="footer-copy">Copyright &copy; Charmera 2026 Production</p>
-</footer>
-
-
-<!-- ================= JAVASCRIPT ================= -->
-<script>
-
-/* ===== WAIT FOR PAGE LOAD ===== */
-document.addEventListener("DOMContentLoaded", () => {
-
-  /* ===== IMAGE SLIDER ===== */
-  const slides = document.querySelectorAll('#heroSlider .slide');
-  const dotsContainer = document.getElementById('imgDots');
-  let current = 0;
-
-  if (slides.length && dotsContainer) {
-
-    slides.forEach((_, i) => {
-      const d = document.createElement('button');
-      d.className = 'img-dot' + (i === 0 ? ' active' : '');
-      d.onclick = () => goTo(i);
-      dotsContainer.appendChild(d);
-    });
-
-    function goTo(n) {
-      slides[current].classList.remove('active');
-      dotsContainer.children[current].classList.remove('active');
-
-      current = (n + slides.length) % slides.length;
-
-      slides[current].classList.add('active');
-      dotsContainer.children[current].classList.add('active');
-    }
-
-    function moveSlide(dir) {
-      goTo(current + dir);
-    }
-
-    setInterval(() => moveSlide(1), 4000);
-  }
-
-});
-
-
-/* ===== EMAIL SUBMIT ===== */
-function handleEmailSubmit() {
-  const input = document.getElementById('footerEmail');
-  const msg = document.getElementById('emailMsg');
-
-  if (!input || !msg) return;
-
-  if (input.value && input.value.includes('@')) {
-    msg.style.display = 'block';
-    input.value = '';
-
-    setTimeout(() => {
-      msg.style.display = 'none';
-    }, 3000);
-  } else {
-    input.focus();
-  }
-}
-
-</script>
+
+     <div class="frame-card">
+       <span class="badge">● KODAK STYLE</span>
+       <img src="https://www.kodak.retopro.co/cdn/shop/files/PICT0152.jpg?v=1755769893&width=600" alt="Kodak frame">
+       <h3>Kodak frame</h3>
+     </div>
+
+
+     <div class="frame-card">
+       <span class="badge">● RETRO</span>
+       <img src="https://www.kodak.retopro.co/cdn/shop/files/PICT0100.jpg?v=1756285986&width=600" alt="1987 frame">
+       <h3>1987 frame</h3>
+     </div>
+
+
+   </div>
+
+
+ </section>
+
+
+ <!-- ===== OPTION C: HOW IT WORKS ===== -->
+ <section class="how-it-works">
+   <h2 class="section-title">How it works</h2>
+   <div class="steps-grid">
+
+
+     <div class="step">
+       <div class="step-icon">📸</div>
+       <h3>Snap</h3>
+       <p>Point and shoot with your Charmera. Every shot is a memory waiting to be made.</p>
+     </div>
+
+
+     <div class="step">
+       <div class="step-icon">🎞️</div>
+       <h3>Choose a Filter</h3>
+       <p>Browse our signature Charmera tones — from moody B&W to warm vintage film looks.</p>
+     </div>
+
+
+     <div class="step">
+       <div class="step-icon">📤</div>
+       <h3>Share</h3>
+       <p>Export and share your memories with friends. Built for the gram and beyond.</p>
+     </div>
+
+
+   </div>
+ </section>
+
+
+ <!-- FILTERS -->
+ <section class="filters-section">
+
+
+   <h2 class="section-title">Filters</h2>
+   <p class="section-subtitle">Transform every shot with signature Charmera tones.</p>
+
+
+   <div class="filters">
+
+
+     <div class="card">
+       <span class="badge badge-light">● MONO</span>
+       <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=80"
+         class="bw" alt="B&W filter">
+       <h3>B&W filter</h3>
+     </div>
+
+
+     <div class="card">
+       <span class="badge badge-light">● ARCTIC</span>
+       <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=80"
+         class="cool" alt="Cool tone filter">
+       <h3>Cool tone filter</h3>
+     </div>
+
+
+     <div class="card">
+       <span class="badge badge-light">● GOLDEN</span>
+       <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=80"
+         class="warm" alt="Warm tone filter">
+       <h3>Warm tone filter</h3>
+     </div>
+
+
+     <div class="card">
+       <span class="badge badge-light">● PXL</span>
+       <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=80"
+         class="yellow" alt="Pixel filter Yellow">
+       <h3>Pixel filter (Yellow)</h3>
+     </div>
+
+
+     <div class="card">
+       <span class="badge badge-light">● PXL</span>
+       <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=80"
+         class="red" alt="Pixel filter Red">
+       <h3>Pixel filter (Red)</h3>
+     </div>
+
+
+     <div class="card">
+       <span class="badge badge-light">● PXL</span>
+       <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=80"
+         class="blue" alt="Pixel filter Blue">
+       <h3>Pixel filter (Blue)</h3>
+     </div>
+
+
+     <div class="card">
+       <span class="badge badge-light">● NOIR</span>
+       <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=80"
+         class="gray" alt="Pixel filter Gray">
+       <h3>Pixel filter (Gray)</h3>
+     </div>
+
+
+   </div>
+
+
+ </section>
+
+
+ <!-- CTA BANNER -->
+ <section class="banner">
+   <h1 class="bg-text">CHARMERA</h1>
+   <div class="banner-content">
+     <h2>Capture your memories with Charmera.</h2>
+     <div class="banner-buttons">
+       <a href="https://shopee.sg/Kodak-Charmera-Keychain-Digital-Camera-i.232559135.42068305164" target="_blank"
+         class="primary-link">🛒 BUY NOW ON SHOPEE</a>
+       <button class="secondary">VIEW FEATURES</button>
+     </div>
+   </div>
+ </section>
+
+
+ <!-- FOOTER -->
+ <footer class="site-footer">
+   <div class="footer-inner">
+     <div class="footer-newsletter">
+       <h3>Subscribe to Our Newsletter!</h3>
+       <p>Sign up to our newsletter to stay up to date on all things Charmera</p>
+       <div class="email-form">
+         <input type="email" id="footerEmail" placeholder="E-mail">
+         <button type="button" onclick="handleEmailSubmit()">&#8250;</button>
+       </div>
+       <p id="emailMsg" class="email-msg">Thanks for subscribing!</p>
+       <div class="footer-social">
+         <a href="#">
+           <svg viewBox="0 0 24 24" fill="#FFEAD6">
+             <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+           </svg>
+         </a>
+         <a href="#">
+           <svg viewBox="0 0 24 24" fill="none" stroke="#FFEAD6" stroke-width="2">
+             <rect x="2" y="2" width="20" height="20" rx="5" />
+             <circle cx="12" cy="12" r="4" />
+             <circle cx="17.5" cy="6.5" r="1" fill="#FFEAD6" stroke="none" />
+           </svg>
+         </a>
+         <a href="#">
+           <svg viewBox="0 0 24 24">
+             <path fill="#FFEAD6"
+               d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.7-.8-2.1-.9C15.9 5 12 5 12 5h0s-3.9 0-6.9.1c-.4.1-1.3.1-2.1.9-.6.6-.8 2-.8 2S2 9.7 2 11.3v1.4C2 14.3 2.2 16 2.2 16s.2 1.4.8 2c.8.8 1.9.8 2.4.9 1.7.2 6.6.2 6.6.2s3.9 0 6.9-.1c.4-.1 1.3-.1 2.1-.9.6-.6.8-2 .8-2s.2-1.7.2-3.3v-1.4C22 9.7 21.8 8 21.8 8z" />
+             <polygon fill="#3B1A0E" points="10 15 16 12 10 9" />
+           </svg>
+         </a>
+       </div>
+     </div>
+     <div class="footer-right">
+       <a href="index.html" class="footer-logo">
+         <img src="imagechar/charmera-logo.png" alt="Charmera">
+       </a>
+       <div class="footer-links-grid">
+         <a href="#">About Us</a>
+         <a href="#">Products</a>
+         <a href="#">FAQ</a>
+         <a href="#">Gallery</a>
+         <a href="#">Customer Support</a>
+         <a href="#">Privacy Policy</a>
+       </div>
+     </div>
+   </div>
+   <p class="footer-copy">Copyright &copy; Charmera 2026 Production</p>
+ </footer>
+
+
+ <script>
+   /* ===== 1. STICKY HEADER WITH BLUR ===== */
+   const header = document.getElementById('siteHeader');
+   window.addEventListener('scroll', () => {
+     header.classList.toggle('scrolled', window.scrollY > 60);
+   });
+
+
+   /* ===== 2. ACTIVE NAV LINK ===== */
+   /* Filters page — CHARMERA active */
+   document.querySelectorAll('.nav a').forEach(a => {
+     if (a.dataset.page === 'charmera') a.classList.add('active');
+   });
+
+
+   /* ===== 3. TYPEWRITER EFFECT ===== */
+   const phrases = ["Every memory feels different.", "Capture it your way.", "Find your perfect mood."];
+   const el = document.getElementById('filterTypewriter');
+   if (el) {
+     let phraseIdx = 0, charIdx = 0, deleting = false;
+     function typewrite() {
+       const current = phrases[phraseIdx];
+       if (!deleting) {
+         el.textContent = current.slice(0, charIdx + 1);
+         charIdx++;
+         if (charIdx === current.length) { deleting = true; setTimeout(typewrite, 1400); return; }
+       } else {
+         el.textContent = current.slice(0, charIdx - 1);
+         charIdx--;
+         if (charIdx === 0) { deleting = false; phraseIdx = (phraseIdx + 1) % phrases.length; }
+       }
+       setTimeout(typewrite, deleting ? 55 : 90);
+     }
+     typewrite();
+   }
+
+
+   /* ===== 4. STATS COUNTER ===== */
+   let statsAnimated = false;
+   function animateStats() {
+     if (statsAnimated) return;
+     const strip = document.querySelector('.stats-strip');
+     if (!strip) return;
+     const rect = strip.getBoundingClientRect();
+     if (rect.top < window.innerHeight && rect.bottom > 0) {
+       statsAnimated = true;
+       document.querySelectorAll('.stat-num').forEach(num => {
+         const target = parseInt(num.dataset.target);
+         const step = target / (1200 / 16);
+         let curr = 0;
+         const timer = setInterval(() => {
+           curr = Math.min(curr + step, target);
+           num.textContent = Math.floor(curr).toLocaleString();
+           if (curr >= target) clearInterval(timer);
+         }, 16);
+       });
+     }
+   }
+
+
+   /* ===== 5. ORIGINAL SLIDER ===== */
+   document.addEventListener("DOMContentLoaded", () => {
+     const slides = document.querySelectorAll('#heroSlider .slide');
+     const dotsContainer = document.getElementById('imgDots');
+     let current = 0;
+     if (slides.length && dotsContainer) {
+       slides.forEach((_, i) => {
+         const d = document.createElement('button');
+         d.className = 'img-dot' + (i === 0 ? ' active' : '');
+         d.onclick = () => goTo(i);
+         dotsContainer.appendChild(d);
+       });
+       function goTo(n) {
+         slides[current].classList.remove('active');
+         dotsContainer.children[current].classList.remove('active');
+         current = (n + slides.length) % slides.length;
+         slides[current].classList.add('active');
+         dotsContainer.children[current].classList.add('active');
+       }
+       setInterval(() => goTo(current + 1), 4000);
+     }
+   });
+
+
+   /* ===== 6. SCROLL REVEAL ===== */
+   window.addEventListener('scroll', () => {
+     document.querySelectorAll('.reveal').forEach(sec => {
+       if (sec.getBoundingClientRect().top < window.innerHeight - 100) sec.classList.add('active');
+     });
+     animateStats();
+   });
+
+
+   /* Run once on load in case stats strip is already visible */
+   setTimeout(animateStats, 100);
+
+
+   function handleEmailSubmit() {
+     const input = document.getElementById('footerEmail');
+     const msg = document.getElementById('emailMsg');
+     if (!input || !msg) return;
+     if (input.value && input.value.includes('@')) {
+       msg.style.display = 'block';
+       input.value = '';
+       setTimeout(() => { msg.style.display = 'none'; }, 3000);
+     } else { input.focus(); }
+   }
+ </script>
+
 
 </body>
+
+
 </html>
+
