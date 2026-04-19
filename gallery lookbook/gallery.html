@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <meta charset="UTF-8">
+  <title>Charmera Gallery Lookbook</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,800;1,9..144,700;1,9..144,800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="../imagechar/favicon.ico">
+  <link rel="stylesheet" href="stylesgallery.css">
+</head>
+
+
+<body>
+
+
+  <!-- ═══════════ SHARED HEADER ═══════════ -->
+  <header class="site-header">
+
+
+    <div class="logo-row">
+      <a href="../home page.html">
+        <img src="../imagechar/charmera-logo.png" alt="Charmera Logo">
+      </a>
+    </div>
+    <div class="nav-row">
+      <nav class="main-nav">
+        <div class="nav-item-dropdown">
+          <a href="#">SHOP</a>
+          <div class="dropdown-menu-custom">
+            <a href="https://sg.shp.ee/dEbrAiBZ" target="_blank">Charmera</a>
+            <a href="../charmera-accessories.html">Accessories</a>
+          </div>
+        </div>
+
+
+        <div class="nav-item-dropdown">
+          <a href="#">CHARMERA</a>
+          <div class="dropdown-menu-custom">
+            <a href="../charmera-specs.html">Product Specifications</a>
+            <a href="../gallery%20lookbook/gallery.html">Gallery</a>
+            <a href="../filters/filters.html">Frames &amp; Filters</a>
+          </div>
+        </div>
+
+
+        <div class="nav-item-dropdown">
+          <a href="#">ABOUT US</a>
+          <div class="dropdown-menu-custom">
+            <a href="../about%20us.html">About Us</a>
+            <a href="../Reviews/reviews.html">Testimonials</a>
+            <a href="../sustainability.html">Sustainability</a>
+          </div>
+        </div>
+
+
+        <div class="nav-item-dropdown">
+          <a href="#">HELP</a>
+          <div class="dropdown-menu-custom">
+            <a href="../quick-start-guide.html">How to Use</a>
+            <a href="../faq.html">FAQ Page</a>
+            <a href="../authentication.html">Product Authenticity Check</a>
+            <a href="../customer-support.html">Contact Us</a>
+          </div>
+        </div>
+      </nav>
+
+
+      <div class="header-icons">
+        <a href="#" id="search-toggle">
+          <img src="../imagechar/search icon.png" alt="Search">
+        </a>
+
+
+        <a href="#" id="login-toggle">
+          <img src="../imagechar/login icon.png" alt="Account">
+        </a>
+
+
+        <a href="https://sg.shp.ee/dEbrAiBZ" target="_blank">
+          <img src="../imagechar/cart icon.png" alt="Cart" class="cart-icon">
+        </a>
+      </div>
+    </div>
+
+
+    <div class="search-bar-wrapper" id="search-bar">
+      <input type="text" placeholder="Search for products...">
+    </div>
+
+
+  </header>
+
+
+  <!-- ═══════════ SHARED LOGIN POP UP  ═══════════ -->
+  <div class="login-overlay" id="loginOverlay"></div>
+
+
+  <div class="login-panel" id="loginPanel">
+    <button class="login-close" id="loginClose">&times;</button>
+    <h2>Login or Create Account</h2>
+    <p class="login-subtext">Enter your email to get started</p>
+    <form class="login-form">
+      <label for="loginEmail">Email</label>
+      <input type="email" id="loginEmail" placeholder="Enter email" required>
+      <button type="submit" class="login-next-btn">Next</button>
+    </form>
+    <p class="login-terms">
+      By clicking on "Next", I confirm that I have read and agree to Charmera's Terms and Conditions and Privacy Policy.
+    </p>
+  </div>
+
+
+  <!-- HERO -->
+  <section class="hero">
+    <span class="hero-label">● GALLERY</span>
+    <h1 class="hero-main">Gallery <span class="hero-accent">Lookbook.</span></h1>
+    <p class="hero-sub" id="typewriterText"></p>
+  </section>
+
+
+  <!-- QUOTE STRIP -->
+  <div class="quote-strip">
+    <p>"Take it everywhere. Photograph everything." &nbsp;—&nbsp; <em>Life is a gallery waiting to be filled.</em></p>
+  </div>
+
+
+  <!-- STATS STRIP -->
+  <div class="stats-strip">
+    <div class="stat-item">
+      <div class="stat-value-group">
+        <span class="stat-num" data-target="7">0</span>
+      </div>
+      <span class="stat-label">Unique Filters</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <div class="stat-value-group">
+        <span class="stat-num" data-target="4">0</span>
+      </div>
+      <span class="stat-label">Vintage Frames</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <div class="stat-value-group">
+        <span class="stat-num" data-target="1000">0</span><span class="stat-suffix">+</span>
+      </div>
+      <span class="stat-label">Happy Customers</span>
+    </div>
+  </div>
+
+
+  <!-- LOOKBOOK -->
+  <section class="lookbook-section reveal">
+    <div class="lookbook-header">
+      <span class="section-label">● LOOKBOOK</span>
+      <h2>Charmera Lookbook</h2>
+      <p>Moments captured on film — raw, warm, and unapologetically nostalgic.</p>
+    </div>
+    <div class="film-wrapper">
+      <button class="slider-btn left">&#10094;</button>
+      <div class="film-slider">
+        <div class="film-card">
+          <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80"
+            alt="Summer '24">
+          <div class="film-label">Summer '24</div>
+        </div>
+        <div class="film-card">
+          <img src="https://images.unsplash.com/photo-1689794392326-da4d4f60d86d?q=80&w=1694&auto=format&fit=crop"
+            alt="Golden Hour">
+          <div class="film-label">Golden Hour</div>
+        </div>
+        <div class="film-card">
+          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80"
+            alt="Road Trip">
+          <div class="film-label">Road Trip</div>
+        </div>
+        <div class="film-card">
+          <img src="https://plus.unsplash.com/premium_photo-1675791188810-3a01768c1e2f?q=80&w=774&auto=format&fit=crop"
+            alt="City Lights">
+          <div class="film-label">City Lights</div>
+        </div>
+        <div class="film-card">
+          <img src="https://images.unsplash.com/photo-1517732306149-e8f829eb588a?w=800&auto=format&fit=crop&q=60"
+            alt="With Friends">
+          <div class="film-label">With Friends</div>
+        </div>
+        <div class="film-card">
+          <img
+            src="https://media.istockphoto.com/id/2148174443/photo/your-friends-leaving-the-airport.jpg?s=1024x1024&w=is&k=20&c=6pmg5Pa5bpH7Mb9P8svc31K9kNIQyZ-vQtyViFCTXJQ="
+            alt="Airport Diaries">
+          <div class="film-label">Airport Diaries</div>
+        </div>
+      </div>
+      <button class="slider-btn right">&#10095;</button>
+    </div>
+  </section>
+
+
+  <!-- TAKE IT EVERYWHERE -->
+  <section class="everywhere-section reveal">
+    <div class="everywhere-text">
+      <span class="section-label dark">● THE CHARMERA WAY</span>
+      <h2>Take it<br><em>everywhere.</em></h2>
+      <p>Your Charmera fits in your pocket, your bag, your adventures. Don't just shoot on one side of the world — bring
+        it to the park, the airport, the midnight diner. Every angle is a story.</p>
+      <a href="../filters/filters.html" class="cta-inline">Explore Filters →</a>
+    </div>
+    <div class="everywhere-grid">
+      <div class="ev-card tall">
+        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=600&q=80"
+          alt="Mountains">
+      </div>
+      <div class="ev-col">
+        <div class="ev-card">
+          <img src="https://images.unsplash.com/photo-1533106418989-88406c7cc8ca?auto=format&fit=crop&w=600&q=80"
+            alt="Street">
+        </div>
+        <div class="ev-card">
+          <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=600&q=80"
+            alt="Travel">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- INSTAGRAM GRID -->
+  <section class="insta-section reveal">
+    <div class="insta-header">
+      <span class="section-label light">● COMMUNITY</span>
+      <h2 class="insta-title">Straight from da <span class="gram">'Gram</span></h2>
+      <p>Check out our socials for inspiration.<br><em>(Hint: Click on the ../images for more ideas)</em></p>
+    </div>
+    <div class="insta-grid">
+      <a href="https://www.instagram.com/p/DW1KnlMimJI/" target="_blank">
+        <img src="./../imagechar/ig1.png" alt="IG post 1">
+        <div class="ig-overlay"><span>View on Instagram ↗</span></div>
+      </a>
+      <a href="https://www.instagram.com/kodakfilm.reto/p/DWl3Vftj9If/" target="_blank">
+        <img src="./../imagechar/ig2.png" alt="IG post 2">
+        <div class="ig-overlay"><span>View on Instagram ↗</span></div>
+      </a>
+      <a href="https://www.instagram.com/kodakfilm.reto/reel/DWWalE9iYev/" target="_blank">
+        <img src="./../imagechar/ig3.png" alt="IG post 3">
+        <div class="ig-overlay"><span>View on Instagram ↗</span></div>
+      </a>
+      <a href="https://www.instagram.com/kodakfilm.reto/p/DWOsLU4iOx7/" target="_blank">
+        <img src="./../imagechar/ig4.png" alt="IG post 4">
+        <div class="ig-overlay"><span>View on Instagram ↗</span></div>
+      </a>
+      <a href="https://www.instagram.com/kodakfilm.reto/p/DWB0IWgjrZQ/" target="_blank">
+        <img src="./../imagechar/ig5.png" alt="IG post 5">
+        <div class="ig-overlay"><span>View on Instagram ↗</span></div>
+      </a>
+      <a href="https://www.instagram.com/kodakfilm.reto/p/DVvyld6DwoK/" target="_blank">
+        <img src="./../imagechar/ig6.png" alt="IG post 6">
+        <div class="ig-overlay"><span>View on Instagram ↗</span></div>
+      </a>
+      <a href="https://www.instagram.com/kodakfilm.reto/p/DVgV4x2DULC/" target="_blank">
+        <img src="./../imagechar/ig6.png" alt="IG post 7">
+        <div class="ig-overlay"><span>View on Instagram ↗</span></div>
+      </a>
+      <a href="https://www.instagram.com/kodakfilm.reto/p/DVYnaJ0j_Py/" target="_blank">
+        <img src="./../imagechar/ig7.png" alt="IG post 8">
+        <div class="ig-overlay"><span>View on Instagram ↗</span></div>
+      </a>
+      <a href="https://www.instagram.com/kodakfilm.reto/p/DVOUPrTCMVo/" target="_blank">
+        <img src="./../imagechar/ig8.png" alt="IG post 9">
+        <div class="ig-overlay"><span>View on Instagram ↗</span></div>
+      </a>
+    </div>
+  </section>
+
+
+
+
+  <!-- ═══════════ FOOTER CTA ═══════════ -->
+  <div class="footer-cta">
+    <h2>Ready to capture your moments?</h2>
+    <p>Free shipping on Shopee &middot; Blind box &mdash; mystery style included</p>
+    <a href="https://shopee.sg/Kodak-Charmera-Keychain-Digital-Camera-i.232559135.42068305164" target="_blank"
+      class="btn-primary">🛍️ Buy Now on Shopee</a>
+  </div>
+
+
+  <!-- ═══════════ SITE FOOTER ═══════════ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-newsletter">
+        <h3>Subscribe to Our Newsletter!</h3>
+        <p>Sign up to our newsletter to stay up to date on all things Charmera</p>
+        <div class="email-form">
+          <input type="email" id="footerEmail" placeholder="E-mail" aria-label="Email address">
+          <button type="button" onclick="handleEmailSubmit()" aria-label="Subscribe">&#8250;</button>
+        </div>
+        <p id="emailMsg" style="font-size:0.78rem;color:var(--burnt);margin-top:0.5rem;display:none;">Thanks for
+          subscribing!</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/share/1DPst67qBR/?mibextid=wwXIfr" aria-label="Facebook" target="_blank">
+            <svg viewBox="0 0 24 24" fill="#fff6ed">
+              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/kodak_shootfilm?igsh=NDl6ajF5a3V1NXlp" aria-label="Instagram"
+            target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff6ed" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.5" cy="6.5" r="0.8" fill="#fff6ed" stroke="none" />
+            </svg>
+          </a>
+          <a href="https://youtube.com/shorts/nMnHP-9sdxE?feature=shared" aria-label="YouTube" target="_blank">
+            <svg viewBox="0 0 24 24">
+              <path fill="#fff6ed"
+                d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z" />
+              <polygon fill="#3B1A0E" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-right">
+        <a href="../home page.html" class="footer-logo">
+          <img src="../imagechar/charmera-logo.png" alt="Charmera"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="footer-logo-fallback">Charmera</span>
+        </a>
+        <div class="footer-links-grid">
+          <a href="../about%20us.html">About Us</a>
+          <a href="../charmera-specs.html">Products</a>
+          <a href="../faq.html">FAQ</a>
+          <a href="../gallery%20lookbook/gallery.html">Gallery</a>
+          <a href="../customer-support.html">Customer Support</a>
+          <a href="../privacy-policy.html">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+    <p class="footer-copy">Copyright &copy; Charmera 2026 Production</p>
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    /* ── Search bar ── */
+    const searchToggle = document.getElementById("search-toggle");
+    const searchBar = document.getElementById("search-bar");
+    searchToggle.addEventListener("click", function (e) {
+      e.preventDefault();
+      searchBar.classList.toggle("active");
+    });
+    /* ── Login Popup ── */
+    const loginToggle = document.getElementById("login-toggle");
+    const loginPanel = document.getElementById("loginPanel");
+    const loginOverlay = document.getElementById("loginOverlay");
+    const loginClose = document.getElementById("loginClose");
+    if (loginToggle && loginPanel && loginOverlay && loginClose) {
+      loginToggle.addEventListener("click", function (e) {
+        e.preventDefault();
+        loginPanel.classList.add("active");
+        loginOverlay.classList.add("active");
+      });
+      loginClose.addEventListener("click", function () {
+        loginPanel.classList.remove("active");
+        loginOverlay.classList.remove("active");
+      });
+      loginOverlay.addEventListener("click", function () {
+        loginPanel.classList.remove("active");
+        loginOverlay.classList.remove("active");
+      });
+    }
+    /* ── Email submit ── */
+    function handleEmailSubmit() {
+      const input = document.getElementById('footerEmail');
+      const msg = document.getElementById('emailMsg');
+      if (input.value && input.value.includes('@')) {
+        msg.style.display = 'block';
+        input.value = '';
+        setTimeout(() => { msg.style.display = 'none'; }, 3000);
+      } else { input.focus(); }
+    }
+
+
+    /* ===== TYPEWRITER EFFECT ===== */
+    const phrases = ["Raw.", "Unfiltered.", "Unapologetically you."];
+    const el = document.getElementById('typewriterText');
+    let phraseIdx = 0, charIdx = 0, deleting = false;
+
+
+    function typewrite() {
+      const current = phrases[phraseIdx];
+      if (!deleting) {
+        el.textContent = current.slice(0, charIdx + 1);
+        charIdx++;
+        if (charIdx === current.length) {
+          deleting = true;
+          setTimeout(typewrite, 1400);
+          return;
+        }
+      } else {
+        el.textContent = current.slice(0, charIdx - 1);
+        charIdx--;
+        if (charIdx === 0) {
+          deleting = false;
+          phraseIdx = (phraseIdx + 1) % phrases.length;
+        }
+      }
+      setTimeout(typewrite, deleting ? 55 : 90);
+    }
+    typewrite();
+
+
+    /* ===== ANIMATED STATS COUNTER ===== */
+    const statNums = document.querySelectorAll('.stat-num');
+    let statsAnimated = false;
+
+
+    function animateStats() {
+      if (statsAnimated) return;
+      const strip = document.querySelector('.stats-strip');
+      if (!strip) return;
+      const rect = strip.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        statsAnimated = true;
+        statNums.forEach(num => {
+          const target = parseInt(num.dataset.target);
+          const duration = 1200;
+          const step = target / (duration / 16);
+          let current = 0;
+          const timer = setInterval(() => {
+            current = Math.min(current + step, target);
+            num.textContent = Math.floor(current).toLocaleString();
+            if (current >= target) clearInterval(timer);
+          }, 16);
+        });
+      }
+    }
+
+
+    /* ===== SCROLL REVEAL ===== */
+    const reveals = document.querySelectorAll('.reveal');
+    function revealOnScroll() {
+      reveals.forEach(sec => {
+        if (sec.getBoundingClientRect().top < window.innerHeight - 100) {
+          sec.classList.add('active');
+        }
+      });
+      animateStats();
+    }
+    window.addEventListener('scroll', revealOnScroll);
+    setTimeout(revealOnScroll, 100);
+
+
+    /* ===== FILM SLIDER ===== */
+    const slider = document.querySelector('.film-slider');
+    if (slider) {
+      document.querySelector('.left').onclick = () => slider.scrollBy({ left: -360, behavior: 'smooth' });
+      document.querySelector('.right').onclick = () => slider.scrollBy({ left: 360, behavior: 'smooth' });
+    }
+  </script>
+</body>
+
+
+</html>
