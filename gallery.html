@@ -5,9 +5,8 @@
 <head>
  <meta charset="UTF-8">
  <title>Charmera Gallery Lookbook</title>
- <link
-   href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap"
-   rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,800;1,9..144,700;1,9..144,800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
+ <link rel="icon" type="image/ico" href="imagechar/favicon.ico">
  <link rel="stylesheet" href="stylesgallery.css">
 </head>
 
@@ -15,36 +14,101 @@
 <body>
 
 
- <!-- HEADER (sticky) -->
- <header class="header" id="siteHeader">
-   <div class="topbar">
-     <div></div>
-     <a href="#" class="logo-img">
-       <img src="./imagechar/charmera-logo.png" alt="Charmera Logo">
-     </a>
-     <div class="icons">
-       <svg viewBox="0 0 24 24">
-         <circle cx="11" cy="11" r="7" />
-         <line x1="20" y1="20" x2="16" y2="16" />
-       </svg>
-       <svg viewBox="0 0 24 24">
-         <circle cx="12" cy="8" r="4" />
-         <path d="M4 20c0-4 4-6 8-6s8 2 8 6" />
-       </svg>
-       <svg viewBox="0 0 24 24">
-         <circle cx="9" cy="20" r="1" />
-         <circle cx="17" cy="20" r="1" />
-         <path d="M3 4h2l2 12h10l2-8H6" />
-       </svg>
+ <!-- ═══════════ SHARED HEADER ═══════════ -->
+ <header class="site-header">
+
+
+   <div class="logo-row">
+   <a href="home page.html">
+     <img src="imagechar/charmera-logo.png" alt="Charmera Logo">
+   </a>
+   </div>
+   <div class="nav-row">
+     <nav class="main-nav">
+       <div class="nav-item-dropdown">
+           <a href="#">SHOP</a>
+           <div class="dropdown-menu-custom">
+             <a href="https://sg.shp.ee/dEbrAiBZ" target="_blank">Charmera</a>
+             <a href="charmera-accessories.html">Accessories</a>
+           </div>
+         </div>
+
+
+         <div class="nav-item-dropdown">
+           <a href="#">CHARMERA</a>
+           <div class="dropdown-menu-custom">
+             <a href="charmera-specs.html">Product Specifications</a>
+             <a href="gallery.html">Gallery</a>
+             <a href="filters.html">Frames &amp; Filters</a>
+           </div>
+         </div>
+
+
+         <div class="nav-item-dropdown">
+           <a href="#">ABOUT US</a>
+           <div class="dropdown-menu-custom">
+             <a href="about us.html">About Us</a>
+             <a href="reviews.html">Testimonials</a>
+             <a href="sustainability.html">Sustainability</a>
+           </div>
+         </div>
+
+
+         <div class="nav-item-dropdown">
+           <a href="#">HELP</a>
+           <div class="dropdown-menu-custom">
+             <a href="quick-start-guide.html">How to Use</a>
+             <a href="faq.html">FAQ Page</a>
+             <a href="authentication.html">Product Authenticity Check</a>
+             <a href="customer-support.html">Contact Us</a>
+           </div>
+         </div>
+ </nav>
+
+
+     <div class="header-icons">
+       <a href="#" id="search-toggle">
+         <img src="imagechar/search icon.png" alt="Search">
+       </a>
+
+
+       <a href="#" id="login-toggle">
+         <img src="imagechar/login icon.png" alt="Account">
+       </a>
+
+
+       <a href="https://sg.shp.ee/dEbrAiBZ" target="_blank">
+         <img src="imagechar/cart icon.png" alt="Cart" class="cart-icon">
+       </a>
      </div>
    </div>
-   <nav class="nav">
-     <a href="#" data-page="shop">SHOP</a>
-     <a href="#" data-page="charmera">CHARMERA</a>
-     <a href="#" data-page="about">ABOUT US</a>
-     <a href="#" data-page="help">HELP</a>
-   </nav>
+
+
+   <div class="search-bar-wrapper" id="search-bar">
+     <input type="text" placeholder="Search for products...">
+   </div>
+
+
  </header>
+
+
+ <!-- ═══════════ SHARED LOGIN POP UP  ═══════════ -->
+ <div class="login-overlay" id="loginOverlay"></div>
+
+
+ <div class="login-panel" id="loginPanel">
+   <button class="login-close" id="loginClose">&times;</button>
+   <h2>Login or Create Account</h2>
+   <p class="login-subtext">Enter your email to get started</p>
+   <form class="login-form">
+     <label for="loginEmail">Email</label>
+     <input type="email" id="loginEmail" placeholder="Enter email" required>
+     <button type="submit" class="login-next-btn">Next</button>
+   </form>
+   <p class="login-terms">
+     By clicking on "Next", I confirm that I have read and agree to Charmera's Terms and Conditions and Privacy Policy.
+   </p>
+ </div>
 
 
  <!-- HERO -->
@@ -209,56 +273,59 @@
  </section>
 
 
- <!-- CTA BANNER -->
- <section class="banner">
-   <h1 class="bg-text">CHARMERA</h1>
-   <div class="banner-content">
-     <h2>Capture your memories with Charmera.</h2>
-     <div class="banner-buttons">
-       <a href="https://shopee.sg/Kodak-Charmera-Keychain-Digital-Camera-i.232559135.42068305164" target="_blank"
-         class="primary-link">🛒 BUY NOW ON SHOPEE</a>
-       <a href="filters.html" class="secondary">VIEW FILTERS</a>
-     </div>
-   </div>
- </section>
 
 
- <!-- FOOTER -->
+ <!-- ═══════════ FOOTER CTA ═══════════ -->
+ <div class="footer-cta">
+   <h2>Ready to capture your moments?</h2>
+   <p>Free shipping on Shopee &middot; Blind box &mdash; mystery style included</p>
+   <a href="https://shopee.sg/Kodak-Charmera-Keychain-Digital-Camera-i.232559135.42068305164" target="_blank" class="btn-primary">🛍️ Buy Now on Shopee</a>
+ </div>
+
+
+ <!-- ═══════════ SITE FOOTER ═══════════ -->
  <footer class="site-footer">
    <div class="footer-inner">
      <div class="footer-newsletter">
        <h3>Subscribe to Our Newsletter!</h3>
        <p>Sign up to our newsletter to stay up to date on all things Charmera</p>
        <div class="email-form">
-         <input type="email" id="footerEmail" placeholder="E-mail">
-         <button type="button" onclick="handleEmailSubmit()">&#8250;</button>
+         <input type="email" id="footerEmail" placeholder="E-mail" aria-label="Email address">
+         <button type="button" onclick="handleEmailSubmit()" aria-label="Subscribe">&#8250;</button>
        </div>
-       <p id="emailMsg" class="email-msg">Thanks for subscribing!</p>
+       <p id="emailMsg" style="font-size:0.78rem;color:var(--burnt);margin-top:0.5rem;display:none;">Thanks for subscribing!</p>
        <div class="footer-social">
-         <a href="#"><svg viewBox="0 0 24 24" fill="#FFEAD6">
-             <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
-           </svg></a>
-         <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="#FFEAD6" stroke-width="2">
-             <rect x="2" y="2" width="20" height="20" rx="5" />
-             <circle cx="12" cy="12" r="4" />
-             <circle cx="17.5" cy="6.5" r="1" fill="#FFEAD6" stroke="none" />
-           </svg></a>
-         <a href="#"><svg viewBox="0 0 24 24">
-             <path fill="#FFEAD6"
-               d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.7-.8-2.1-.9C15.9 5 12 5 12 5h0s-3.9 0-6.9.1c-.4.1-1.3.1-2.1.9-.6.6-.8 2-.8 2S2 9.7 2 11.3v1.4C2 14.3 2.2 16 2.2 16s.2 1.4.8 2c.8.8 1.9.8 2.4.9 1.7.2 6.6.2 6.6.2s3.9 0 6.9-.1c.4-.1 1.3-.1 2.1-.9.6-.6.8-2 .8-2s.2-1.7.2-3.3v-1.4C22 9.7 21.8 8 21.8 8z" />
-             <polygon fill="#3B1A0E" points="10 15 16 12 10 9" />
-           </svg></a>
+         <a href="https://www.facebook.com/share/1DPst67qBR/?mibextid=wwXIfr" aria-label="Facebook" target="_blank">
+           <svg viewBox="0 0 24 24" fill="#fff6ed"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+         </a>
+         <a href="https://www.instagram.com/kodak_shootfilm?igsh=NDl6ajF5a3V1NXlp" aria-label="Instagram" target="_blank">
+           <svg viewBox="0 0 24 24" fill="none" stroke="#fff6ed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+             <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+             <circle cx="12" cy="12" r="4"/>
+             <circle cx="17.5" cy="6.5" r="0.8" fill="#fff6ed" stroke="none"/>
+           </svg>
+         </a>
+         <a href="https://youtube.com/shorts/nMnHP-9sdxE?feature=shared" aria-label="YouTube" target="_blank">
+           <svg viewBox="0 0 24 24">
+             <path fill="#fff6ed" d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/>
+             <polygon fill="#3B1A0E" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/>
+           </svg>
+         </a>
        </div>
      </div>
      <div class="footer-right">
-       <a href="index.html" class="footer-logo"><img src="imagechar/charmera-logo.png" alt="Charmera"></a>
+       <a href="home page.html" class="footer-logo">
+         <img src="imagechar/charmera-logo.png" alt="Charmera"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+         <span class="footer-logo-fallback">Charmera</span>
+       </a>
        <div class="footer-links-grid">
-         <a href="#">About Us</a>
-         <a href="#">Products</a>
-         <a href="#">FAQ</a>
+         <a href="about us.html">About Us</a>
+         <a href="charmera-specs.html">Products</a>
+         <a href="faq.html">FAQ</a>
          <a href="gallery.html">Gallery</a>
-         <a href="#">Customer Support</a>
-         <a href="#">Privacy Policy</a>
+         <a href="customer-support.html">Customer Support</a>
+         <a href="privacy-policy.html">Privacy Policy</a>
        </div>
      </div>
    </div>
@@ -266,26 +333,48 @@
  </footer>
 
 
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
  <script>
-   /* ===== 1. STICKY HEADER WITH BLUR ===== */
-   const header = document.getElementById('siteHeader');
-   window.addEventListener('scroll', () => {
-     if (window.scrollY > 60) {
-       header.classList.add('scrolled');
-     } else {
-       header.classList.remove('scrolled');
-     }
+ /* ── Search bar ── */
+   const searchToggle = document.getElementById("search-toggle");
+   const searchBar = document.getElementById("search-bar");
+   searchToggle.addEventListener("click", function(e){
+     e.preventDefault();
+     searchBar.classList.toggle("active");
    });
+ /* ── Login Popup ── */
+   const loginToggle = document.getElementById("login-toggle");
+   const loginPanel = document.getElementById("loginPanel");
+   const loginOverlay = document.getElementById("loginOverlay");
+   const loginClose = document.getElementById("loginClose");
+   if (loginToggle && loginPanel && loginOverlay && loginClose) {
+     loginToggle.addEventListener("click", function(e){
+       e.preventDefault();
+       loginPanel.classList.add("active");
+       loginOverlay.classList.add("active");
+     });
+     loginClose.addEventListener("click", function(){
+       loginPanel.classList.remove("active");
+       loginOverlay.classList.remove("active");
+     });
+     loginOverlay.addEventListener("click", function(){
+       loginPanel.classList.remove("active");
+       loginOverlay.classList.remove("active");
+     });
+   }
+ /* ── Email submit ── */
+   function handleEmailSubmit() {
+     const input = document.getElementById('footerEmail');
+     const msg = document.getElementById('emailMsg');
+     if (input.value && input.value.includes('@')) {
+       msg.style.display = 'block';
+       input.value = '';
+       setTimeout(() => { msg.style.display = 'none'; }, 3000);
+     } else { input.focus(); }
+   }
 
 
-   /* ===== 2. ACTIVE NAV LINK ===== */
-   /* Gallery page — mark CHARMERA as contextually active */
-   document.querySelectorAll('.nav a').forEach(a => {
-     if (a.dataset.page === 'charmera') a.classList.add('active');
-   });
-
-
-   /* ===== 3. TYPEWRITER EFFECT ===== */
+   /* ===== TYPEWRITER EFFECT ===== */
    const phrases = ["Raw.", "Unfiltered.", "Unapologetically you."];
    const el = document.getElementById('typewriterText');
    let phraseIdx = 0, charIdx = 0, deleting = false;
@@ -314,7 +403,7 @@
    typewrite();
 
 
-   /* ===== 4. ANIMATED STATS COUNTER ===== */
+   /* ===== ANIMATED STATS COUNTER ===== */
    const statNums = document.querySelectorAll('.stat-num');
    let statsAnimated = false;
 
@@ -341,7 +430,7 @@
    }
 
 
-   /* ===== 5. SCROLL REVEAL ===== */
+   /* ===== SCROLL REVEAL ===== */
    const reveals = document.querySelectorAll('.reveal');
    function revealOnScroll() {
      reveals.forEach(sec => {
@@ -357,20 +446,9 @@
 
    /* ===== FILM SLIDER ===== */
    const slider = document.querySelector('.film-slider');
-   document.querySelector('.left').onclick = () => slider.scrollBy({ left: -360, behavior: 'smooth' });
-   document.querySelector('.right').onclick = () => slider.scrollBy({ left: 360, behavior: 'smooth' });
-
-
-   /* ===== EMAIL ===== */
-   function handleEmailSubmit() {
-     const input = document.getElementById('footerEmail');
-     const msg = document.getElementById('emailMsg');
-     if (!input || !msg) return;
-     if (input.value && input.value.includes('@')) {
-       msg.style.display = 'block';
-       input.value = '';
-       setTimeout(() => { msg.style.display = 'none'; }, 3000);
-     } else { input.focus(); }
+   if (slider) {
+     document.querySelector('.left').onclick = () => slider.scrollBy({ left: -360, behavior: 'smooth' });
+     document.querySelector('.right').onclick = () => slider.scrollBy({ left: 360, behavior: 'smooth' });
    }
  </script>
 </body>
