@@ -5,14 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Charmera — Product Specifications</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,800;1,9..144,700;1,9..144,800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
 <link rel="icon" type="image/ico" href="imagechar/favicon.ico">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;0,900;1,700;1,900&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;0,900;1,700;1,900&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=DM+Sans:wght@300;400;500;600&display=swap');
-
+/* ══════════════════════════════
+   ROOT VARIABLES
+══════════════════════════════ */
 :root {
   --cream: #fff6ed;
+  --pink: #fca6af;
+  --raspberry: #d13955;
+  --honey: #ffbf52;
+  --mustard: #f0a224;
+  --burnt: #ee6f34;
+  --rust: #c44c18;
+  --brown: #562915;
   --pink-mid: #D0435C;
   --brown-dark: #3B1A0E;
   --brown-mid: #6B2E14;
@@ -24,81 +32,194 @@
   --blue: #1565C0;
 }
 
+/* ══════════════════════════════
+   BASE
+══════════════════════════════ */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  background-color: var(--cream);
-  color: var(--brown-dark);
-  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--brown);
+  font-family: 'Barlow', sans-serif;
   overflow-x: hidden;
 }
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  line-height: 1.1;
+}
+p, a, button, li, span { font-family: 'Barlow', sans-serif; }
+.promo-font { font-family: 'Playfair Display', serif; }
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+section { padding: 80px 0; }
 
 /* ══════════════════════════════
    SHARED HEADER
 ══════════════════════════════ */
 .site-header {
   background: var(--cream);
-  padding: 0.7rem 5% 0;
+  padding-top: 20px;
   position: sticky;
   top: 0;
-  z-index: 200;
-  border-bottom: 1.5px solid rgba(59,26,14,0.12);
+  z-index: 9999;
+  width: 100%;
 }
-.header-top {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  margin-bottom: 0.5rem;
+.logo-row {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+  padding-top: 6px;
 }
-.logo-link {
+.logo-row img { width: 260px; max-width: 90%; }
+.nav-row {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 140px;
+  padding: 8px 0 12px;
+}
+.main-nav { display: flex; gap: 100px; }
+.nav-item-dropdown { position: relative; }
+.nav-item-dropdown > a {
   text-decoration: none;
-}
-.logo-link img {
-  height: 56px;
-  object-fit: contain;
-  display: block;
-}
-.logo-fallback {
-  display: none;
-  font-family: 'Fraunces', 'Playfair Display', serif;
+  color: var(--brown);
   font-size: 1.7rem;
   font-weight: 700;
-  color: var(--brown-dark);
+  position: relative;
+  transition: transform 0.3s ease, color 0.3s ease;
+  display: inline-block;
 }
-.header-icons {
+.nav-item-dropdown > a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--brown);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.nav-item-dropdown:hover > a { color: var(--rust); transform: translateY(-4px); }
+.nav-item-dropdown:hover > a::after { transform: scaleX(1); }
+.dropdown-menu-custom {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 270px;
+  background: var(--cream);
+  border: 1.5px solid rgba(86, 41, 21, 0.15);
+  padding: 14px 0;
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 1.3rem;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  z-index: 100;
+  box-shadow: 0 8px 24px rgba(86, 41, 21, 0.08);
 }
-.header-icons svg {
-  width: 19px; height: 19px;
-  stroke: var(--brown-dark); fill: none;
-  stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
-  cursor: pointer; transition: stroke 0.2s;
+.dropdown-menu-custom a {
+  text-decoration: none;
+  color: var(--brown);
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
-.header-icons svg:hover { stroke: var(--orange); }
-.header-nav {
-  display: flex;
-  justify-content: center;
-  gap: 2.8rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.7rem;
+.dropdown-menu-custom a:hover { background: #f3e8dc; color: var(--rust); }
+.nav-item-dropdown:hover .dropdown-menu-custom {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
-.header-nav a {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.72rem; font-weight: 600;
-  letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--brown-mid); text-decoration: none;
-  transition: color 0.2s; padding-bottom: 3px;
+.header-icons { display: flex; align-items: center; gap: 55px; }
+.header-icons a { display: inline-flex; align-items: center; justify-content: center; }
+.header-icons img {
+  width: 26px; height: 26px;
+  object-fit: contain;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
-.header-nav a:hover { color: var(--orange); }
-.header-nav a.active {
-  color: var(--brown-dark);
-  border-bottom: 2px solid var(--orange);
+.header-icons img.cart-icon { width: 36px; height: 30px; object-fit: contain; }
+.header-icons a:hover img { transform: translateY(-3px); opacity: 0.8; }
+.search-bar-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  padding: 0 60px;
+}
+.search-bar-wrapper.active { max-height: 100px; padding: 10px 60px 25px; }
+.search-bar-wrapper input {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1.5px solid var(--brown);
+  background: transparent;
+  color: var(--brown);
+  font-family: 'Barlow', sans-serif;
+  font-size: 1rem;
+  border-radius: 30px;
+  outline: none;
+}
+.search-bar-wrapper input::placeholder { color: var(--brown); opacity: 0.7; }
+.login-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+  z-index: 10000;
+}
+.login-panel {
+  position: fixed;
+  top: 0;
+  right: -420px;
+  width: 400px;
+  max-width: 100%;
+  height: 100vh;
+  background: #ffffff;
+  padding: 40px 30px;
+  box-shadow: -8px 0 25px rgba(0,0,0,0.12);
+  transition: right 0.35s ease;
+  z-index: 10001;
+  overflow-y: auto;
+}
+.login-panel.active { right: 0; }
+.login-overlay.active { opacity: 1; visibility: visible; }
+.login-close {
+  border: none; background: none;
+  font-size: 2rem; color: var(--brown);
+  cursor: pointer; position: absolute;
+  top: 18px; right: 20px; line-height: 1;
+}
+.login-panel h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.7rem; color: var(--brown);
+  margin-top: 30px; margin-bottom: 12px;
+}
+.login-subtext { font-size: 1.05rem; color: #666; margin-bottom: 28px; }
+.login-form label { display: block; font-weight: 600; color: var(--brown); margin-bottom: 8px; }
+.login-form input {
+  width: 100%; padding: 14px 16px;
+  border: 1.5px solid #d4d4d4;
+  font-size: 1rem; margin-bottom: 18px; outline: none;
+}
+.login-form input:focus { border-color: var(--brown); }
+.login-next-btn {
+  width: 100%; border: none;
+  background: #b7aea7; color: white;
+  padding: 14px; font-size: 1.05rem; font-weight: 700;
+  cursor: pointer; transition: 0.3s ease;
+}
+.login-next-btn:hover { background: var(--brown); }
+.login-terms { font-size: 0.8rem; line-height: 1.5; color: #777; margin-top: 22px; }
+
+@media (max-width: 900px) {
+  .nav-row { flex-direction: column; gap: 20px; padding: 20px; }
+  .main-nav { flex-wrap: wrap; justify-content: center; gap: 25px; }
+  .search-bar-wrapper, .search-bar-wrapper.active { padding-left: 20px; padding-right: 20px; }
 }
 
 /* ══════════════════════════════
@@ -153,10 +274,7 @@ body {
 }
 .footer-social a:hover { background: var(--orange); }
 .footer-social svg { width: 17px; height: 17px; }
-.footer-right {
-  display: flex; flex-direction: column;
-  align-items: flex-start; gap: 1.5rem;
-}
+.footer-right { display: flex; flex-direction: column; align-items: flex-start; gap: 1.5rem; }
 .footer-logo { text-decoration: none; display: block; }
 .footer-logo img { height: 48px; object-fit: contain; display: block; }
 .footer-logo-fallback {
@@ -164,9 +282,7 @@ body {
   font-family: 'Fraunces', 'Playfair Display', serif;
   font-size: 1.5rem; font-weight: 700; color: var(--brown-dark);
 }
-.footer-links-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem 3rem;
-}
+.footer-links-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem 3rem; }
 .footer-links-grid a {
   font-family: 'DM Sans', sans-serif;
   font-size: 0.9rem; color: var(--brown-dark);
@@ -262,9 +378,7 @@ body {
   transition: background 0.2s, border-color 0.2s, color 0.2s;
   line-height: 1.4;
 }
-.bundle-opt:hover {
-  background: var(--brown-dark); color: var(--cream); border-color: var(--brown-dark);
-}
+.bundle-opt:hover { background: var(--brown-dark); color: var(--cream); border-color: var(--brown-dark); }
 .disclaimer {
   font-size: 0.67rem; font-style: italic;
   color: rgba(59,26,14,0.5); margin-bottom: 1.2rem; line-height: 1.55;
@@ -284,9 +398,7 @@ body {
   opacity: 0; transition: opacity 0.5s ease;
 }
 .hero-img-wrap .slide.active { opacity: 1; }
-.hero-img-wrap .slide img {
-  width: 100%; height: 100%; object-fit: contain;
-}
+.hero-img-wrap .slide img { width: 100%; height: 100%; object-fit: contain; }
 .img-dots {
   position: absolute; bottom: 0.7rem; left: 50%;
   transform: translateX(-50%);
@@ -349,7 +461,6 @@ body {
   font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
   gap: 0.4rem; text-align: center; padding: 1.5rem; width: 100%; height: 100%;
 }
-.feat-img-placeholder span { font-size: 2.5rem; }
 .feat-label-overlay {
   position: absolute; bottom: 1.5rem; left: 1.5rem;
   background: var(--brown-dark); color: var(--cream);
@@ -414,37 +525,92 @@ body {
   .feature-row.reverse .feat-content { order: 1; }
   .footer-inner { grid-template-columns: 1fr; gap: 2.5rem; }
 }
-@media (max-width: 560px) {
-  .header-nav { gap: 1.4rem; }
-  .header-nav a { font-size: 0.64rem; letter-spacing: 0.1em; }
-}
 </style>
 </head>
 <body>
 
 <!-- ═══════════ HEADER ═══════════ -->
 <header class="site-header">
-  <div class="header-top">
-    <div></div>
-    <a href="home page.html" class="logo-link">
-      <img src="imagechar/charmera-logo.png" alt="Charmera"
-           onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-      <span class="logo-fallback">Charmera</span>
+
+  <div class="logo-row">
+    <a href="home page.html">
+      <img src="imagechar/charmera-logo.png" alt="Charmera Logo">
     </a>
+  </div>
+
+  <div class="nav-row">
+    <nav class="main-nav">
+      <div class="nav-item-dropdown">
+        <a href="#">SHOP</a>
+        <div class="dropdown-menu-custom">
+          <a href="https://sg.shp.ee/dEbrAiBZ" target="_blank">Charmera</a>
+          <a href="charmera-accessories.html">Accessories</a>
+        </div>
+      </div>
+
+      <div class="nav-item-dropdown">
+        <a href="#">CHARMERA</a>
+        <div class="dropdown-menu-custom">
+          <a href="charmera-specs.html">Product Specifications</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="filters.html">Frames &amp; Filters</a>
+        </div>
+      </div>
+
+      <div class="nav-item-dropdown">
+        <a href="#">ABOUT US</a>
+        <div class="dropdown-menu-custom">
+          <a href="about us.html">About Us</a>
+          <a href="reviews.html">Testimonials</a>
+          <a href="sustainability.html">Sustainability</a>
+        </div>
+      </div>
+
+      <div class="nav-item-dropdown">
+        <a href="#">HELP</a>
+        <div class="dropdown-menu-custom">
+          <a href="quick-start-guide.html">How to Use</a>
+          <a href="faq.html">FAQ Page</a>
+          <a href="authentication.html">Product Authenticity Check</a>
+          <a href="customer-support.html">Contact Us</a>
+        </div>
+      </div>
+    </nav>
+
     <div class="header-icons">
-      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.65" y2="16.65"/></svg>
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-6 8-6s8 2 8 6"/></svg>
-      <svg viewBox="0 0 24 24"><circle cx="9" cy="20.5" r="1"/><circle cx="17" cy="20.5" r="1"/><path d="M3 4h2l2.5 11h9l2-7H7"/></svg>
+      <a href="#" id="search-toggle">
+        <img src="imagechar/search icon.png" alt="Search">
+      </a>
+      <a href="#" id="login-toggle">
+        <img src="imagechar/login icon.png" alt="Account">
+      </a>
+      <a href="https://sg.shp.ee/dEbrAiBZ" target="_blank">
+        <img src="imagechar/cart icon.png" alt="Cart" class="cart-icon">
+      </a>
     </div>
   </div>
-  <nav class="header-nav">
-    <a href="home page.html">Shop</a>
-    <a href="charmera-specs.html" class="active">Charmera</a>
-    <a href="charmera-accessories.html">Accessories</a>
-    <a href="about us.html">About Us</a>
-    <a href="faq.html">Help</a>
-  </nav>
+
+  <div class="search-bar-wrapper" id="search-bar">
+    <input type="text" placeholder="Search for products...">
+  </div>
+
 </header>
+
+<!-- ═══════════ LOGIN POP UP ═══════════ -->
+<div class="login-overlay" id="loginOverlay"></div>
+<div class="login-panel" id="loginPanel">
+  <button class="login-close" id="loginClose">&times;</button>
+  <h2>Login or Create Account</h2>
+  <p class="login-subtext">Enter your email to get started</p>
+  <form class="login-form">
+    <label for="loginEmail">Email</label>
+    <input type="email" id="loginEmail" placeholder="Enter email" required>
+    <button type="submit" class="login-next-btn">Next</button>
+  </form>
+  <p class="login-terms">
+    By clicking on "Next", I confirm that I have read and agree to Charmera's Terms and Conditions and Privacy Policy.
+  </p>
+</div>
 
 
 <!-- ═══════════ HERO ═══════════ -->
@@ -637,6 +803,7 @@ body {
 </footer>
 
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
 /* ── Image rotator ── */
 const slides = document.querySelectorAll('#heroSlider .slide');
@@ -659,7 +826,6 @@ function goTo(n) {
   dotsContainer.children[current].classList.add('active');
 }
 function moveSlide(dir) { goTo(current + dir); }
-
 function startAuto() { autoTimer = setInterval(() => moveSlide(1), 4000); }
 function stopAuto()  { clearInterval(autoTimer); }
 startAuto();
@@ -692,6 +858,35 @@ function resetBundle() {
   priceEl.textContent = defaultPrice;
   labelEl.textContent = defaultLabel;
   startAuto();
+}
+
+/* ── Search bar ── */
+const searchToggle = document.getElementById("search-toggle");
+const searchBar = document.getElementById("search-bar");
+searchToggle.addEventListener("click", function(e){
+  e.preventDefault();
+  searchBar.classList.toggle("active");
+});
+
+/* ── Login Popup ── */
+const loginToggle = document.getElementById("login-toggle");
+const loginPanel = document.getElementById("loginPanel");
+const loginOverlay = document.getElementById("loginOverlay");
+const loginClose = document.getElementById("loginClose");
+if (loginToggle && loginPanel && loginOverlay && loginClose) {
+  loginToggle.addEventListener("click", function(e){
+    e.preventDefault();
+    loginPanel.classList.add("active");
+    loginOverlay.classList.add("active");
+  });
+  loginClose.addEventListener("click", function(){
+    loginPanel.classList.remove("active");
+    loginOverlay.classList.remove("active");
+  });
+  loginOverlay.addEventListener("click", function(){
+    loginPanel.classList.remove("active");
+    loginOverlay.classList.remove("active");
+  });
 }
 
 /* ── Email submit ── */
