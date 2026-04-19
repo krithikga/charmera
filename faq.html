@@ -1,0 +1,556 @@
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ &mdash; Charmera</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="shortcut icon" href="favicon/favicon.ico">
+<style>
+
+  /* ===== VARIABLES & BASE ===== */
+  :root {
+    --cream:     #fff6ed;
+    --pink:      #fca6af;
+    --raspberry: #d13955;
+    --honey:     #ffbf52;
+    --mustard:   #f0a224;
+    --burnt:     #ee6f34;
+    --rust:      #c44c18;
+    --brown:     #562915;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--cream);
+    color: var(--brown);
+    font-family: 'Barlow', sans-serif;
+  }
+  h1,h2,h3,h4,h5,h6 {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+  p,a,button,li,span { font-family: 'Barlow', sans-serif; }
+  .promo-font { font-family: 'Playfair Display', serif; }
+  img { max-width: 100%; display: block; }
+  a { text-decoration: none; color: inherit; }
+  section { padding: 80px 0; }
+
+  /* ===== HEADER ===== */
+  .site-header {
+    background: var(--cream);
+    padding-top: 20px;
+    position: relative;
+    z-index: 20;
+  }
+  .logo-row {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 40px;
+    padding-top: 20px;
+  }
+  .logo-row img { width: 500px; max-width: 90%; }
+  .nav-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 140px;
+    padding: 18px 0 35px;
+  }
+  .main-nav { display: flex; gap: 100px; }
+  .nav-item-dropdown { position: relative; }
+  .nav-item-dropdown > a {
+    text-decoration: none;
+    color: var(--brown);
+    font-size: 1.7rem;
+    font-weight: 700;
+    position: relative;
+    transition: transform 0.3s ease, color 0.3s ease;
+    display: inline-block;
+  }
+  .nav-item-dropdown > a::after {
+    content: "";
+    position: absolute;
+    left: 0; bottom: -6px;
+    width: 100%; height: 2px;
+    background-color: var(--brown);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  .nav-item-dropdown:hover > a { color: var(--rust); transform: translateY(-4px); }
+  .nav-item-dropdown:hover > a::after { transform: scaleX(1); }
+  .dropdown-menu-custom {
+    position: absolute;
+    top: 100%; left: 0;
+    min-width: 270px;
+    background: var(--cream);
+    border: 1.5px solid rgba(86,41,21,0.15);
+    padding: 14px 0;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    z-index: 100;
+    box-shadow: 0 8px 24px rgba(86,41,21,0.08);
+  }
+  .dropdown-menu-custom a {
+    color: var(--brown);
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  .dropdown-menu-custom a:hover { background: #f3e8dc; color: var(--rust); }
+  .nav-item-dropdown:hover .dropdown-menu-custom {
+    opacity: 1; visibility: visible; transform: translateY(0);
+  }
+  .header-icons { display: flex; align-items: center; gap: 55px; }
+  .header-icons a { display: inline-flex; align-items: center; justify-content: center; }
+  .header-icons img {
+    width: 26px; height: 26px;
+    object-fit: contain;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  .header-icons img.cart-icon { width: 36px; height: 30px; }
+  .header-icons a:hover img { transform: translateY(-3px); opacity: 0.8; }
+  .search-bar-wrapper {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    padding: 0 60px;
+  }
+  .search-bar-wrapper.active { max-height: 100px; padding: 10px 60px 25px; }
+  .search-bar-wrapper input {
+    width: 100%; padding: 14px 18px;
+    border: 1.5px solid var(--brown);
+    background: transparent; color: var(--brown);
+    font-family: 'Barlow', sans-serif; font-size: 1rem;
+    border-radius: 30px; outline: none;
+  }
+  .search-bar-wrapper input::placeholder { color: var(--brown); opacity: 0.7; }
+
+  /* ===== LOGIN PANEL ===== */
+  .login-overlay {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.35);
+    opacity: 0; visibility: hidden;
+    transition: 0.3s ease; z-index: 999;
+  }
+  .login-panel {
+    position: fixed; top: 0; right: -420px;
+    width: 400px; max-width: 100%; height: 100vh;
+    background: #ffffff; padding: 40px 30px;
+    box-shadow: -8px 0 25px rgba(0,0,0,0.12);
+    transition: right 0.35s ease; z-index: 1000; overflow-y: auto;
+  }
+  .login-panel.active { right: 0; }
+  .login-overlay.active { opacity: 1; visibility: visible; }
+  .login-close {
+    border: none; background: none; font-size: 2rem;
+    color: var(--brown); cursor: pointer;
+    position: absolute; top: 18px; right: 20px; line-height: 1;
+  }
+  .login-panel h2 {
+    font-family: 'Fraunces', serif; font-size: 1.7rem;
+    color: var(--brown); margin-top: 30px; margin-bottom: 12px;
+  }
+  .login-subtext { font-size: 1.05rem; color: #666; margin-bottom: 28px; }
+  .login-form label { display: block; font-weight: 600; color: var(--brown); margin-bottom: 8px; }
+  .login-form input {
+    width: 100%; padding: 14px 16px;
+    border: 1.5px solid #d4d4d4; font-size: 1rem;
+    margin-bottom: 18px; outline: none;
+  }
+  .login-form input:focus { border-color: var(--brown); }
+  .login-next-btn {
+    width: 100%; border: none; background: #b7aea7; color: white;
+    padding: 14px; font-size: 1.05rem; font-weight: 700;
+    cursor: pointer; transition: 0.3s ease;
+  }
+  .login-next-btn:hover { background: var(--brown); }
+  .login-terms { font-size: 0.8rem; line-height: 1.5; color: #777; margin-top: 22px; }
+
+  /* ===== HERO BANNER ===== */
+  .hero-banner { padding: 48px; text-align: center; }
+  .hero-banner h1 {
+    font-family: 'Fraunces', serif; font-size: 38px;
+    font-weight: 800; margin-bottom: 8px;
+  }
+  .hero-banner p { font-style: italic; font-size: 18px; }
+  .banner-amber { background: #f1a124; color: #462314; }
+  .banner-dark  { background: #462314; color: #fff6ed; }
+  .banner-rust  { background: #c44c18; color: #fff6ed; }
+  .banner-pink  { background: #d23955; color: #fff6ed; }
+
+  /* ===== CONTENT WRAPPER ===== */
+  .content { max-width: 860px; margin: 0 auto; padding: 48px 24px; }
+
+  /* ===== CTA STRIP ===== */
+  .cta-section {
+    position: relative; background: var(--brown);
+    padding: 90px 5%; overflow: hidden;
+  }
+  .cta-overlay-word {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 170%; text-align: center;
+    font-family: 'Fraunces', serif; font-size: 16rem;
+    font-weight: 800; letter-spacing: 4px;
+    color: rgba(255,255,255,0.08); white-space: nowrap; pointer-events: none;
+  }
+  .cta-content { position: relative; z-index: 2; text-align: center; }
+  .cta-content h2 {
+    font-family: 'Playfair Display', serif; color: white;
+    font-size: 3.5rem; font-weight: 700; margin-bottom: 28px;
+  }
+  .cta-buttons { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; }
+  .cta-btn {
+    min-width: 260px; padding: 16px 28px; border-radius: 8px;
+    font-size: 1.2rem; font-weight: 700; transition: 0.3s ease;
+  }
+  .cta-buy-btn  { background: #ffbf52; color: var(--brown); }
+  .cta-buy-btn:hover  { background: white; }
+  .cta-feature-btn  { background: #8a664f; color: white; }
+  .cta-feature-btn:hover { background: white; color: var(--brown); }
+
+  /* ===== FOOTER ===== */
+  .footer-section { background: var(--cream); padding: 55px 5% 18px; }
+  .footer-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 70px; align-items: start;
+  }
+  .footer-newsletter { display: flex; flex-direction: column; }
+  .footer-newsletter h3 {
+    font-family: 'Fraunces', serif; font-size: 2.45rem;
+    white-space: nowrap; color: var(--brown); margin-bottom: 18px;
+  }
+  .footer-newsletter p {
+    font-size: 1.2rem; line-height: 1.45;
+    color: var(--brown); margin-bottom: 26px;
+  }
+  .newsletter-form {
+    display: flex; align-items: center; justify-content: space-between;
+    border: 2px solid var(--brown); border-radius: 50px;
+    max-width: 420px; padding: 0 10px 0 0; overflow: hidden;
+  }
+  .newsletter-form input {
+    flex: 1; border: none; background: transparent;
+    padding: 16px 26px; font-size: 1.2rem; color: var(--brown); outline: none;
+  }
+  .newsletter-form input::placeholder { color: rgba(86,41,21,0.55); }
+  .newsletter-form button {
+    border: none; background: transparent; color: var(--brown);
+    font-size: 2.2rem; line-height: 1; padding: 0 18px 4px 12px; cursor: pointer;
+  }
+  .footer-links-area {
+    display: flex; flex-direction: column;
+    justify-content: flex-start; align-items: flex-start; gap: 26px;
+  }
+  .footer-logo img { width: 520px; max-width: 100%; }
+  .footer-links-grid {
+    display: grid; grid-template-columns: repeat(2, auto); gap: 22px 90px;
+  }
+  .footer-column { display: flex; flex-direction: column; gap: 24px; }
+  .footer-column a {
+    color: var(--brown); font-size: 1.15rem; transition: color 0.3s ease;
+  }
+  .footer-column a:hover { color: var(--rust); }
+  .footer-bottom {
+    grid-column: 1 / -1; text-align: center;
+    margin-top: 34px; color: var(--brown); font-size: 1rem;
+  }
+  .footer-socials { display: flex; align-items: center; gap: 70px; margin-top: 21px; }
+  .footer-socials a { display: inline-flex; align-items: center; justify-content: center; }
+  .footer-socials img {
+    width: 45px; height: 47px; object-fit: contain;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  .footer-socials a:hover img { transform: translateY(-3px); opacity: 0.8; }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px) {
+    .nav-row { flex-direction: column; gap: 20px; padding: 20px; }
+    .main-nav { flex-wrap: wrap; justify-content: center; gap: 25px; }
+    .search-bar-wrapper, .search-bar-wrapper.active { padding-left: 20px; padding-right: 20px; }
+    .cta-overlay-word { font-size: 5rem; }
+    .cta-content h2 { font-size: 2rem; }
+    .cta-btn { min-width: 220px; font-size: 1rem; }
+    .footer-grid { grid-template-columns: 1fr; gap: 45px; }
+    .footer-logo img { width: 340px; }
+    .footer-links-grid { gap: 20px 50px; }
+    .footer-newsletter h3 { white-space: normal; }
+  }
+
+
+
+  /* ===== FAQ PAGE ===== */
+  .faq-wrapper {
+    display: flex; gap: 0;
+    background: #ffe9d6; border-radius: 16px; overflow: hidden;
+  }
+  .faq-sidebar {
+    min-width: 200px; padding: 32px 24px;
+    border-right: 1px solid rgba(70,35,20,0.12);
+  }
+  .faq-sidebar h3 {
+    font-family: 'Fraunces', serif; font-size: 25px;
+    font-weight: 800; color: #462314; margin-bottom: 24px;
+  }
+  .faq-sidebar a {
+    display: block; font-size: 16px; color: #806960;
+    margin-bottom: 14px;
+    cursor: pointer; transition: color 0.2s;
+  }
+  .faq-sidebar a:hover { color: #c44c18; }
+  .faq-sidebar a.active { font-weight: 700; color: #462314; text-decoration: none; }
+  .faq-main { flex: 1; padding: 32px; }
+  .faq-panel { display: none; }
+  .faq-panel.active { display: block; }
+  .faq-item { margin-bottom: 28px; }
+  .faq-item h4 {
+    font-family: 'Barlow', sans-serif; font-size: 17px;
+    font-weight: 700; color: #462314; margin-bottom: 8px;
+  }
+  .faq-item p { font-size: 16px; color: #462314; line-height: 1.65; }
+  .faq-item a { color: #c44c18; }
+
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo-row">
+    <img src="images/charmera_logo.png" alt="Charmera Logo">
+  </div>
+  <div class="nav-row">
+    <nav class="main-nav">
+      <div class="nav-item-dropdown">
+        <a href="#">SHOP</a>
+        <div class="dropdown-menu-custom">
+            <a href="https://sg.shp.ee/dEbrAiBZ">Charmera</a>
+            <a href="accessories.html">Accessories</a>
+        </div>
+      </div>
+      <div class="nav-item-dropdown">
+        <a href="#">CHARMERA</a>
+        <div class="dropdown-menu-custom">
+            <a href="product-specifications.html">Product Specifications</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="frames.html">Frames &amp; Filters</a>
+        </div>
+      </div>
+      <div class="nav-item-dropdown">
+        <a href="#">ABOUT US</a>
+        <div class="dropdown-menu-custom">
+            <a href="about.html">About Us</a>
+            <a href="testimonials.html">Testimonials</a>
+            <a href="sustainability.html">Sustainability</a>
+        </div>
+      </div>
+      <div class="nav-item-dropdown">
+        <a href="#">HELP</a>
+        <div class="dropdown-menu-custom">
+            <a href="faq.html">FAQ</a>
+            <a href="quick-start-guide.html">Quick Start Guide</a>
+            <a href="authentication.html">Product Authenticity Check</a>
+            <a href="customer-support.html">Customer Support</a>
+        </div>
+      </div>
+    </nav>
+    <div class="header-icons">
+      <a href="#" id="search-toggle"><img src="images/search icon.png" alt="Search"></a>
+      <a href="#" id="login-toggle"><img src="images/login icon.png" alt="Account"></a>
+      <a href="https://sg.shp.ee/dEbrAiBZ" target="_blank"><img src="images/cart icon.png" alt="Cart" class="cart-icon"></a>
+    </div>
+  </div>
+  <div class="search-bar-wrapper" id="search-bar">
+    <input type="text" placeholder="Search for products...">
+  </div>
+</header>
+
+<div class="login-overlay" id="loginOverlay"></div>
+<div class="login-panel" id="loginPanel">
+  <button class="login-close" id="loginClose">&times;</button>
+  <h2>Login or Create Account</h2>
+  <p class="login-subtext">Enter your email to get started</p>
+  <form class="login-form">
+    <label for="loginEmail">Email</label>
+    <input type="email" id="loginEmail" placeholder="Enter email" required>
+    <button type="submit" class="login-next-btn">Next</button>
+  </form>
+  <p class="login-terms">By clicking on "Next", I confirm that I have read and agree to Charmera's Terms and Conditions and Privacy Policy.</p>
+</div>
+
+<div class="hero-banner banner-amber">
+  <h1>Frequently Asked Questions</h1>
+  <p>Got more questions? Drop us an email &mdash; shopeexcharmera@becharmed.com</p>
+</div>
+
+<div class="content">
+  <div class="faq-wrapper">
+    <div class="faq-sidebar">
+      <h3>FAQ</h3>
+      <a onclick="switchFaq('functions', this)" class="active">Charmera Functions</a>
+      <a onclick="switchFaq('howtouse', this)">How to Use</a>
+      <a onclick="switchFaq('faulty', this)">Faulty Charmera</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+    </div>
+    <div class="faq-main">
+
+      <div id="faq-functions" class="faq-panel active">
+        <div class="faq-item">
+          <h4>What functions does the Charmera offer?</h4>
+          <p>The Charmera supports photo taking &amp; video recording, featuring 4 frames &amp; 7 filters in photo mode.</p>
+        </div>
+        <div class="faq-item">
+          <h4>How do I transfer photos &amp; videos from the Charmera?</h4>
+          <p>Ensure a memory card is inserted into the Charmera. Connect the Charmera to a computer for easy review, copying &amp; sharing.</p>
+        </div>
+        <div class="faq-item">
+          <h4>How can I check how many photos I can take?</h4>
+          <p>The upper right corner of the screen displays the remaining number of photos available for capture.</p>
+        </div>
+        <div class="faq-item">
+          <h4>What memory card does the Charmera support?</h4>
+          <p>The Charmera supports Micro SD cards ranging from 1GB up to 128GB.</p>
+        </div>
+        <div class="faq-item">
+          <h4>What image and video formats does the Charmera use?</h4>
+          <p>Photos are saved in JPEG format at 1440 &times; 1080 resolution. Videos are saved in AVI format at 30 fps.</p>
+        </div>
+      </div>
+
+      <div id="faq-howtouse" class="faq-panel">
+        <div class="faq-item">
+          <h4>How do I turn on the Charmera?</h4>
+          <p>Press and hold the On/Off button located on the top of the device until the indicator light activates.</p>
+        </div>
+        <div class="faq-item">
+          <h4>How do I charge the Charmera?</h4>
+          <p>Connect the Charmera to a power source using a USB-C cable. The indicator light will show the charging status.</p>
+        </div>
+        <div class="faq-item">
+          <h4>How do I insert a memory card?</h4>
+          <p>Insert a compatible Micro SD card (1GB&ndash;128GB) into the memory card slot on the back of the device.</p>
+        </div>
+        <div class="faq-item">
+          <h4>How do I navigate menus?</h4>
+          <p>Use the Up/Down buttons on the back of the device to navigate. Press Play/OK to confirm your selection.</p>
+        </div>
+      </div>
+
+      <div id="faq-faulty" class="faq-panel">
+        <div class="faq-item">
+          <h4>My Charmera won't turn on. What should I do?</h4>
+          <p>Charge the device fully using a USB-C cable. If it still doesn't respond, press the Reset button on the back of the device with a pin or toothpick.</p>
+        </div>
+        <div class="faq-item">
+          <h4>My photos aren't saving. What's wrong?</h4>
+          <p>Ensure a compatible Micro SD card is properly inserted. Check that the card is not full or corrupted. Try formatting the card on a computer and reinserting it.</p>
+        </div>
+        <div class="faq-item">
+          <h4>The screen isn't displaying anything.</h4>
+          <p>Try resetting the device. If the issue persists, please contact our support team via the <a href="customer-support.html">Customer Support</a> page.</p>
+        </div>
+        <div class="faq-item">
+          <h4>How do I contact support for a faulty unit?</h4>
+          <p>Email us at shopeexcharmera@becharmed.com or use the <a href="customer-support.html">Contact Us</a> form on the support page.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<section class="cta-section">
+  <div class="cta-overlay-word">CHARMERA</div>
+  <div class="cta-content">
+    <h2>Capture your memories with Charmera</h2>
+    <div class="cta-buttons">
+      <a href="https://shopee.sg/Kodak-Charmera-Keychain-Digital-Camera-i.232559135.42068305164?extraParams=%7B%22display_model_id%22%3A330540380511%2C%22model_selection_logic%22%3A3%7D" target="_blank" class="cta-btn cta-buy-btn">&#x1F6D2; BUY NOW ON SHOPEE</a>
+      <a href="quick-start-guide.html" class="cta-btn cta-feature-btn">VIEW CHARMERA FEATURES</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer-section">
+  <div class="footer-grid">
+    <div class="footer-newsletter">
+      <h3>Subscribe to Our Newsletter!</h3>
+      <p>Sign up to our newsletter to stay up to date<br>on all things Charmera</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="E-mail" required>
+        <button type="submit">&#8250;</button>
+      </form>
+      <div class="footer-socials">
+        <a href="https://www.facebook.com/share/1DPst67qBR/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">
+          <img src="images/fb logo.png" alt="Facebook">
+        </a>
+        <a href="https://www.instagram.com/kodak_shootfilm?igsh=NDl6ajF5a3V1NXlp" target="_blank">
+          <img src="images/ig logo.png" alt="Instagram">
+        </a>
+        <a href="https://youtube.com/shorts/nMnHP-9sdxE?feature=shared" target="_blank">
+          <img src="images/yt logo.png" alt="YouTube">
+        </a>
+      </div>
+    </div>
+    <div class="footer-links-area">
+      <a href="index.html" class="footer-logo">
+        <img src="images/charmera_logo.png" alt="Charmera Logo">
+      </a>
+      <div class="footer-links-grid">
+        <div class="footer-column">
+          <a href="about.html">About Us</a>
+          <a href="faq.html">FAQ</a>
+          <a href="customer-support.html">Customer Support</a>
+        </div>
+        <div class="footer-column">
+          <a href="products.html">Products</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="privacy-policy.html">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      Copyright &copy; Charmera 2026 Production<br><br>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  const searchToggle = document.getElementById("search-toggle");
+  const searchBar    = document.getElementById("search-bar");
+  searchToggle.addEventListener("click", function(e) {
+    e.preventDefault();
+    searchBar.classList.toggle("active");
+  });
+  const loginToggle  = document.getElementById("login-toggle");
+  const loginPanel   = document.getElementById("loginPanel");
+  const loginOverlay = document.getElementById("loginOverlay");
+  const loginClose   = document.getElementById("loginClose");
+  if (loginToggle && loginPanel && loginOverlay && loginClose) {
+    loginToggle.addEventListener("click", function(e) {
+      e.preventDefault(); loginPanel.classList.add("active"); loginOverlay.classList.add("active");
+    });
+    loginClose.addEventListener("click", function() {
+      loginPanel.classList.remove("active"); loginOverlay.classList.remove("active");
+    });
+    loginOverlay.addEventListener("click", function() {
+      loginPanel.classList.remove("active"); loginOverlay.classList.remove("active");
+    });
+  }
+</script>
+<script>
+  function switchFaq(panel, el) {
+    document.querySelectorAll('.faq-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.faq-sidebar a').forEach(a => a.classList.remove('active'));
+    document.getElementById('faq-' + panel).classList.add('active');
+    el.classList.add('active');
+  }
+</script>
+</body>
+</html>

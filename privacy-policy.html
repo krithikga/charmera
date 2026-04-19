@@ -1,0 +1,926 @@
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy &mdash; Charmera</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="shortcut icon" href="favicon/favicon.ico">
+
+<style>
+
+  /* ===== SHARED VARIABLES & BASE ===== */
+  :root {
+    --cream:     #fff6ed;
+    --pink:      #fca6af;
+    --raspberry: #d13955;
+    --honey:     #ffbf52;
+    --mustard:   #f0a224;
+    --burnt:     #ee6f34;
+    --rust:      #c44c18;
+    --brown:     #562915;
+  }
+
+  body {
+    background: var(--cream);
+    color: var(--brown);
+    font-family: 'Barlow', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  p, a, button, li, span {
+    font-family: 'Barlow', sans-serif;
+  }
+
+  .promo-font {
+    font-family: 'Playfair Display', serif;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  section {
+    padding: 80px 0;
+  }
+
+  /* ===== HEADER ===== */
+  .site-header {
+    background: var(--cream);
+    padding-top: 20px;
+    position: relative;
+    z-index: 20;
+  }
+
+  .logo-row {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 40px;
+    padding-top: 20px;
+  }
+
+  .logo-row img {
+    width: 500px;
+    max-width: 90%;
+  }
+
+  .nav-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 140px;
+    padding: 18px 0 35px;
+  }
+
+  .main-nav {
+    display: flex;
+    gap: 100px;
+  }
+
+  .nav-item-dropdown {
+    position: relative;
+  }
+
+  .nav-item-dropdown > a {
+    text-decoration: none;
+    color: var(--brown);
+    font-size: 1.7rem;
+    font-weight: 700;
+    position: relative;
+    transition: transform 0.3s ease, color 0.3s ease;
+    display: inline-block;
+  }
+
+  .nav-item-dropdown > a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--brown);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+
+  .nav-item-dropdown:hover > a {
+    color: var(--rust);
+    transform: translateY(-4px);
+  }
+
+  .nav-item-dropdown:hover > a::after {
+    transform: scaleX(1);
+  }
+
+  .dropdown-menu-custom {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 270px;
+    background: var(--cream);
+    border: 1.5px solid rgba(86, 41, 21, 0.15);
+    padding: 14px 0;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    z-index: 100;
+    box-shadow: 0 8px 24px rgba(86, 41, 21, 0.08);
+  }
+
+  .dropdown-menu-custom a {
+    text-decoration: none;
+    color: var(--brown);
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .dropdown-menu-custom a:hover {
+    background: #f3e8dc;
+    color: var(--rust);
+  }
+
+  .nav-item-dropdown:hover .dropdown-menu-custom {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .header-icons {
+    display: flex;
+    align-items: center;
+    gap: 55px;
+  }
+
+  .header-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header-icons img {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .header-icons img.cart-icon {
+    width: 36px;
+    height: 30px;
+    object-fit: contain;
+  }
+
+  .header-icons a:hover img {
+    transform: translateY(-3px);
+    opacity: 0.8;
+  }
+
+  .search-bar-wrapper {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    padding: 0 60px;
+  }
+
+  .search-bar-wrapper.active {
+    max-height: 100px;
+    padding: 10px 60px 25px;
+  }
+
+  .search-bar-wrapper input {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1.5px solid var(--brown);
+    background: transparent;
+    color: var(--brown);
+    font-family: 'Barlow', sans-serif;
+    font-size: 1rem;
+    border-radius: 30px;
+    outline: none;
+  }
+
+  .search-bar-wrapper input::placeholder {
+    color: var(--brown);
+    opacity: 0.7;
+  }
+
+  /* ===== LOGIN PANEL ===== */
+  .login-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+    z-index: 999;
+  }
+
+  .login-panel {
+    position: fixed;
+    top: 0;
+    right: -420px;
+    width: 400px;
+    max-width: 100%;
+    height: 100vh;
+    background: #ffffff;
+    padding: 40px 30px;
+    box-shadow: -8px 0 25px rgba(0,0,0,0.12);
+    transition: right 0.35s ease;
+    z-index: 1000;
+    overflow-y: auto;
+  }
+
+  .login-panel.active { right: 0; }
+  .login-overlay.active { opacity: 1; visibility: visible; }
+
+  .login-close {
+    border: none;
+    background: none;
+    font-size: 2rem;
+    color: var(--brown);
+    cursor: pointer;
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    line-height: 1;
+  }
+
+  .login-panel h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.7rem;
+    color: var(--brown);
+    margin-top: 30px;
+    margin-bottom: 12px;
+  }
+
+  .login-subtext {
+    font-size: 1.05rem;
+    color: #666;
+    margin-bottom: 28px;
+  }
+
+  .login-form label {
+    display: block;
+    font-weight: 600;
+    color: var(--brown);
+    margin-bottom: 8px;
+  }
+
+  .login-form input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1.5px solid #d4d4d4;
+    font-size: 1rem;
+    margin-bottom: 18px;
+    outline: none;
+  }
+
+  .login-form input:focus { border-color: var(--brown); }
+
+  .login-next-btn {
+    width: 100%;
+    border: none;
+    background: #b7aea7;
+    color: white;
+    padding: 14px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  .login-next-btn:hover { background: var(--brown); }
+
+  .login-terms {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: #777;
+    margin-top: 22px;
+  }
+
+  /* ===== HERO BANNER (page-specific dark banner) ===== */
+  .hero-banner {
+    padding: 48px;
+    text-align: center;
+  }
+
+  .hero-banner h1 {
+    font-family: 'Fraunces', serif;
+    font-size: 38px;
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+
+  .hero-banner p {
+    font-family: 'Barlow', sans-serif;
+    font-style: italic;
+    font-size: 18px;
+  }
+
+  .banner-dark {
+    background: #462314;
+    color: #fff6ed;
+  }
+
+  /* ===== CONTENT WRAPPER ===== */
+  .content {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 48px 24px;
+  }
+
+  /* ===== CTA STRIP ===== */
+  .cta-section {
+    position: relative;
+    background: var(--brown);
+    padding: 90px 5%;
+    overflow: hidden;
+  }
+
+  .cta-overlay-word {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 170%;
+    text-align: center;
+    font-family: 'Fraunces', serif;
+    font-size: 16rem;
+    font-weight: 800;
+    letter-spacing: 4px;
+    color: rgba(255,255,255,0.08);
+    white-space: nowrap;
+    pointer-events: none;
+  }
+
+  .cta-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+  }
+
+  .cta-content h2 {
+    font-family: 'Playfair Display', serif;
+    color: white;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 28px;
+  }
+
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .cta-btn {
+    min-width: 260px;
+    padding: 16px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 700;
+    transition: 0.3s ease;
+  }
+
+  .cta-buy-btn {
+    background: #ffbf52;
+    color: var(--brown);
+  }
+
+  .cta-buy-btn:hover { background: white; }
+
+  .cta-feature-btn {
+    background: #8a664f;
+    color: white;
+  }
+
+  .cta-feature-btn:hover {
+    background: white;
+    color: var(--brown);
+  }
+
+  /* ===== FOOTER ===== */
+  .footer-section {
+    background: var(--cream);
+    padding: 55px 5% 18px;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: start;
+  }
+
+  .footer-newsletter {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .footer-newsletter h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 2.45rem;
+    white-space: nowrap;
+    color: var(--brown);
+    margin-bottom: 18px;
+  }
+
+  .footer-newsletter p {
+    font-size: 1.2rem;
+    line-height: 1.45;
+    color: var(--brown);
+    margin-bottom: 26px;
+  }
+
+  .newsletter-form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid var(--brown);
+    border-radius: 50px;
+    max-width: 420px;
+    padding: 0 10px 0 0;
+    overflow: hidden;
+  }
+
+  .newsletter-form input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 16px 26px;
+    font-size: 1.2rem;
+    color: var(--brown);
+    outline: none;
+  }
+
+  .newsletter-form input::placeholder {
+    color: rgba(86,41,21,0.55);
+  }
+
+  .newsletter-form button {
+    border: none;
+    background: transparent;
+    color: var(--brown);
+    font-size: 2.2rem;
+    line-height: 1;
+    padding: 0 18px 4px 12px;
+    cursor: pointer;
+  }
+
+  .footer-links-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 26px;
+  }
+
+  .footer-logo img {
+    width: 520px;
+    max-width: 100%;
+  }
+
+  .footer-links-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 22px 90px;
+  }
+
+  .footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .footer-column a {
+    color: var(--brown);
+    text-decoration: none;
+    font-size: 1.15rem;
+    transition: color 0.3s ease;
+  }
+
+  .footer-column a:hover { color: var(--rust); }
+
+  .footer-bottom {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 34px;
+    color: var(--brown);
+    font-size: 1rem;
+  }
+
+  .footer-socials {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+    margin-top: 5px;
+  }
+
+  .footer-socials a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer-socials img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .footer-socials a:hover img {
+    transform: translateY(-3px);
+    opacity: 0.8;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px) {
+    .nav-row {
+      flex-direction: column;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .main-nav {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .search-bar-wrapper,
+    .search-bar-wrapper.active {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .cta-overlay-word { font-size: 5rem; }
+    .cta-content h2   { font-size: 2rem; }
+    .cta-btn          { min-width: 220px; font-size: 1rem; }
+
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 45px;
+    }
+
+    .footer-logo img { width: 340px; }
+    .footer-links-grid { gap: 20px 50px; }
+    .footer-newsletter h3 { white-space: normal; }
+  }
+
+  /* ===== PRIVACY PAGE SPECIFIC ===== */
+  .privacy-content {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .privacy-section {
+    margin-bottom: 28px;
+  }
+
+  .privacy-section h3 {
+    font-family: 'Barlow', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #462314;
+    margin-bottom: 10px;
+  }
+
+  .privacy-section p,
+  .privacy-section li {
+    font-size: 16px;
+    color: #462314;
+    line-height: 1.75;
+  }
+
+  .privacy-section ol,
+  .privacy-section ul {
+    padding-left: 20px;
+    margin-top: 8px;
+  }
+
+  .privacy-section li {
+    margin-bottom: 5px;
+  }
+
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+
+  <div class="logo-row">
+    <img src="images/charmera_logo.png" alt="Charmera Logo">
+  </div>
+
+  <div class="nav-row">
+    <nav class="main-nav">
+
+      <div class="nav-item-dropdown">
+        <a href="#">SHOP</a>
+        <div class="dropdown-menu-custom">
+          <a href="https://sg.shp.ee/dEbrAiBZ" target="_blank">Charmera</a>
+          <a href="accessories.html">Accessories</a>
+        </div>
+      </div>
+
+      <div class="nav-item-dropdown">
+        <a href="#">CHARMERA</a>
+        <div class="dropdown-menu-custom">
+          <a href="product-specifications.html">Product Specifications</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="frames.html">Frames &amp; Filters</a>
+        </div>
+      </div>
+
+      <div class="nav-item-dropdown">
+        <a href="#">ABOUT US</a>
+        <div class="dropdown-menu-custom">
+          <a href="about.html">About Us</a>
+          <a href="testimonials.html">Testimonials</a>
+          <a href="sustainability.html">Sustainability</a>
+        </div>
+      </div>
+
+      <div class="nav-item-dropdown">
+        <a href="#">HELP</a>
+        <div class="dropdown-menu-custom">
+          <a href="how-to-use.html">How to Use</a>
+          <a href="faq.html">FAQ Page</a>
+          <a href="authenticity-check.html">Product Authenticity Check</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+      </div>
+
+    </nav>
+
+    <div class="header-icons">
+      <a href="#" id="search-toggle">
+        <img src="images/search icon.png" alt="Search">
+      </a>
+      <a href="#" id="login-toggle">
+        <img src="images/login icon.png" alt="Account">
+      </a>
+      <a href="https://sg.shp.ee/dEbrAiBZ" target="_blank">
+        <img src="images/cart icon.png" alt="Cart" class="cart-icon">
+      </a>
+    </div>
+  </div>
+
+  <div class="search-bar-wrapper" id="search-bar">
+    <input type="text" placeholder="Search for products...">
+  </div>
+
+</header>
+
+<!-- Login overlay & panel -->
+<div class="login-overlay" id="loginOverlay"></div>
+
+<div class="login-panel" id="loginPanel">
+  <button class="login-close" id="loginClose">&times;</button>
+  <h2>Login or Create Account</h2>
+  <p class="login-subtext">Enter your email to get started</p>
+  <form class="login-form">
+    <label for="loginEmail">Email</label>
+    <input type="email" id="loginEmail" placeholder="Enter email" required>
+    <button type="submit" class="login-next-btn">Next</button>
+  </form>
+  <p class="login-terms">
+    By clicking on "Next", I confirm that I have read and agree to Charmera's Terms and Conditions and Privacy Policy.
+  </p>
+</div>
+
+<!-- ===== HERO BANNER ===== -->
+<div class="hero-banner banner-dark">
+  <h1>Privacy Policy</h1>
+  <p>How we collect, use, and protect your personal data</p>
+</div>
+
+<!-- ===== PRIVACY CONTENT ===== -->
+<div class="content">
+  <div class="privacy-content">
+
+    <div class="privacy-section">
+      <p>Charmera Production Ltd. (&ldquo;Charmera&rdquo;, &ldquo;we&rdquo;, &ldquo;our&rdquo; or &ldquo;us&rdquo;) is committed to safeguarding your privacy and ensuring that your Personal Data is protected in accordance with the Hong Kong Personal Data (Privacy) Ordinance (Chapter 486) (the &ldquo;Ordinance&rdquo;) under the laws of Hong Kong. This Privacy Policy Statement explains the Personal Data we collect and how we process and protect that data.</p>
+      <br>
+      <p>We shall keep your Personal Data confidential and ensure that our policies and practices with respect to the collection, use, retention, disclosure, transfer, security and access of your Personal Data comply with the laws of Hong Kong.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h3>This Statement</h3>
+      <p>This Statement covers the Personal Data that we collect and handle when you subscribe with us or when you request for our services. This may occur on our website or via other means. It also covers Personal Data that we may generate and compile about you. Where our operations are subject to privacy legislation other than that of the Hong Kong Special Administrative Region (&ldquo;Hong Kong&rdquo;), then this Statement shall be applied so far as practicable and consistent with such local legislation.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h3>Collection of Personal Data</h3>
+      <p>You may be requested to provide your Personal Data when you use our products and services or when you visit our websites/social media or contact us by telephone/email/inbox, such as but not limited to:</p>
+      <ol>
+        <li>When you register an online account</li>
+        <li>When you do online shopping</li>
+        <li>When you conduct gift redemption or shopping voucher requests</li>
+        <li>When you participate in our promotions and events</li>
+        <li>When you use social media to post information and share activities</li>
+        <li>When you participate in our surveys or questionnaires</li>
+        <li>When you subscribe or unsubscribe to our marketing communications</li>
+        <li>When you submit any comments or feedback to us</li>
+        <li>When you are required to verify your identity with us</li>
+      </ol>
+      <br>
+      <p>The Personal Data that you may be requested to provide includes, but is not limited to, your title, name, gender, phone number, email address, mailing address, birthday information, nationality, personal interests, favourite product categories and other personal data.</p>
+      <br>
+      <p>It is mandatory for you to provide certain categories of Personal Data (as specified at the time of collection). Refusal to provide any Personal Data marked as mandatory may hinder us from handling any subscription or request you are making, and we reserve the right not to provide our products or services, including refusing your subscription application.</p>
+      <br>
+      <p>All Personal Data will be collected on a voluntary, open and fair basis. Any information that we collect will be used for internal use only, and will not be disclosed to third parties.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h3>Usage of Personal Data</h3>
+      <p>We may use your Personal Data for the following purposes:</p>
+      <ol>
+        <li>For handling, maintaining and managing your subscription application</li>
+        <li>For the provision of sales, rewards, birthday promotions, reward eCoupons and services under any programs or events by us or our service providers</li>
+        <li>For carrying out your instructions, responding to your enquiry or providing customer service to you</li>
+        <li>For performing investigation, research or statistical analysis in order to improve our products and services and for marketing purposes</li>
+        <li>With your consent, for direct marketing purposes, and for notifying you about new products and promotions</li>
+        <li>For forming part of a customer database necessary for us to communicate with you by email, mail or other means</li>
+        <li>For use of the online services available on our website such as online shopping and participation in events and promotions</li>
+        <li>For matching your personal data with information you provided to us via other means</li>
+        <li>For observing any legal, governmental or regulatory requirements of Hong Kong or other relevant jurisdiction</li>
+      </ol>
+    </div>
+
+    <div class="privacy-section">
+      <h3>Personal Data Sharing and Disclosure</h3>
+      <p>We may disclose and transfer (whether in Hong Kong or abroad) your Personal Data to our agents or contractors under a duty of confidentiality to us who provide administrative, data processing, research and marketing, distribution, telecommunications, professional or other similar services to us.</p>
+      <br>
+      <p>We may also disclose and transfer your Personal Data to any of our actual or proposed assignees or transferees of our rights in connection with a restructuring of our retail business, and/or merger, sale, or transfer (whether of assets or shares, in whole or in part).</p>
+    </div>
+
+    <div class="privacy-section">
+      <h3>Your Rights in relation to your Personal Data</h3>
+      <p>You have the right to:</p>
+      <ol>
+        <li>Check whether we hold any of your Personal Data</li>
+        <li>Access your Personal Data held by us</li>
+        <li>Require us to correct any Personal Data which is inaccurate</li>
+        <li>Ascertain our policies and practices in relation to Personal Data and the type of Personal Data held by us</li>
+        <li>Opt out from receiving direct marketing materials from us at any time</li>
+      </ol>
+      <br>
+      <p>Any request in relation to the above shall be in writing and sent by email, addressed to <strong>info@retopro.co</strong>.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h3>Direct Marketing</h3>
+      <p>We may use your name and contact information from time to time to provide you with the latest information on our products and services. We may also share your Personal Data with business partners who provide the same products and services for their direct marketing purposes in various forms. Your consent is required before we do so.</p>
+      <br>
+      <p>You may partially or entirely opt-out of receiving such direct marketing communications from RETO by:</p>
+      <ol>
+        <li>Logging into our website</li>
+        <li>Emailing us at info@retopro.co</li>
+        <li>In the case of emails, by clicking the &ldquo;unsubscribe&rdquo; link at the bottom of such emails</li>
+      </ol>
+    </div>
+
+    <div class="privacy-section">
+      <h3>Amendment to this Statement</h3>
+      <p>We may amend this Statement from time to time. If we make any substantial amendments in the way we use your Personal Data, we will notify you by posting a prominent announcement on the website. You agree that such posting will constitute sufficient and adequate notice.</p>
+      <br>
+      <p>You agree that your continued use of our products or services after such amendment will constitute your acceptance of and agreement to be bound by the modified Statement.</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== CTA STRIP ===== -->
+<section class="cta-section">
+  <div class="cta-overlay-word">CHARMERA</div>
+  <div class="cta-content">
+    <h2>Capture your memories with Charmera</h2>
+    <div class="cta-buttons">
+      <a href="https://sg.shp.ee/dEbrAiBZ" target="_blank" class="cta-btn cta-buy-btn">
+        🛒 BUY NOW ON SHOPEE
+      </a>
+      <a href="features.html" class="cta-btn cta-feature-btn">
+        VIEW CHARMERA FEATURES
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer-section">
+  <div class="footer-grid">
+
+    <div class="footer-newsletter">
+      <h3>Subscribe to Our Newsletter!</h3>
+      <p>
+        Sign up to our newsletter to stay up to date<br>
+        on all things Charmera
+      </p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="E-mail" required>
+        <button type="submit">&#8250;</button>
+      </form>
+      <div class="footer-socials">
+        <a href="https://www.facebook.com/share/1DPst67qBR/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">
+          <img src="images/fb logo.png" alt="Facebook">
+        </a>
+        <a href="https://www.instagram.com/kodak_shootfilm?igsh=NDl6ajF5a3V1NXlp" target="_blank">
+          <img src="images/ig logo.png" alt="Instagram">
+        </a>
+        <a href="https://youtube.com/shorts/nMnHP-9sdxE?feature=shared" target="_blank">
+          <img src="images/yt logo.png" alt="YouTube">
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-links-area">
+      <a href="index.html" class="footer-logo">
+        <img src="images/charmera_logo.png" alt="Charmera Logo">
+      </a>
+      <div class="footer-links-grid">
+        <div class="footer-column">
+          <a href="about.html">About Us</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Customer Support</a>
+        </div>
+        <div class="footer-column">
+          <a href="products.html">Products</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="privacy-policy.html">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      Copyright &copy; Charmera 2026 Production
+      <br><br>
+    </div>
+
+  </div>
+</footer>
+
+<!-- ===== SCRIPTS ===== -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  const searchToggle = document.getElementById("search-toggle");
+  const searchBar    = document.getElementById("search-bar");
+
+  searchToggle.addEventListener("click", function(e) {
+    e.preventDefault();
+    searchBar.classList.toggle("active");
+  });
+
+  const loginToggle  = document.getElementById("login-toggle");
+  const loginPanel   = document.getElementById("loginPanel");
+  const loginOverlay = document.getElementById("loginOverlay");
+  const loginClose   = document.getElementById("loginClose");
+
+  if (loginToggle && loginPanel && loginOverlay && loginClose) {
+    loginToggle.addEventListener("click", function(e) {
+      e.preventDefault();
+      loginPanel.classList.add("active");
+      loginOverlay.classList.add("active");
+    });
+
+    loginClose.addEventListener("click", function() {
+      loginPanel.classList.remove("active");
+      loginOverlay.classList.remove("active");
+    });
+
+    loginOverlay.addEventListener("click", function() {
+      loginPanel.classList.remove("active");
+      loginOverlay.classList.remove("active");
+    });
+  }
+</script>
+
+</body>
+</html>
